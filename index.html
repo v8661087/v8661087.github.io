@@ -1,16 +1,173 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-Hant-TW">
 <head>
-  <title>v8661087</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuo</title>
+  <link rel="shortcut icon" href="images/kuo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 </head>
 
-<body style="background-color: #17181c; color:#e6e6e6">
-  <h1>個人網頁測試</h1>
-  <ul>
-    <li>python</li>
-    <li>javascript</li>
-  </ul>
+<body>
+  <style>
+    html { scroll-behavior: smooth;}
+    body {margin: 0;padding: 0;background-color: #17181c; color:#e6e6e6;overflow: auto;}
+     a{ color: #e6e6e6;text-decoration: none}
+    h1,h2,h3,h4,p { margin: 0 ;font-family: Arial, Helvetica, sans-serif}
+    
+    ul{display: flex;}
+    li{list-style-type: none;flex: none;margin-right: 20px;}
+    .wrap {width: 100%;margin: 0 auto;}
+    .indexmenu {background: rgba(0, 0, 0, 0.8);display: flex;position: fixed;
+                top:0;width: 100%;height: 59px;justify-content: center;z-index: 1}
+    .kuologo {float: left;padding: 12px 0px 15px 30px;max-width: 729px;width: 100%;}
+    .kuologo img{float: left;width: 30px;margin-right: 10px}
+    .kuologo h2{float: left;}
+    .link{float: right;;max-width: 489px;width: 100%;}
+    .menu {list-style-type: none;padding: 0;margin: 0;flex:none;}
+    .menu li{margin-right: 20px;list-style:none;width: 96px;height: 58px;}
+    .menu a{transition: .5s; font-family: fantasy;display: flex;color: rgb(161, 161, 161);
+            padding: 17px;;justify-content: center;align-items: center}
+    .menu a:hover{background-color: black;color: white;opacity: 1.0;}
+    .main-title-content{height: 357px;padding: 220px 0 0;margin: 0 131px;text-align: center;color: white;}
+    .main-title-content h1{font-size: 80px;}
+    .main-title-content hr{width: 36px; border: 2px solid #17181c}
+    .about{background-color: #17181c;height: 494px}
+    .about-content{padding: 100px 0;text-align: center}
+    .about-content h2 {font-size: 40px}
+    .about-content hr{width: 36px; border: 2px solid #17181c}
+    .skill{height: 600px;background-color: rgb(0, 57, 95);text-align: center;margin: auto}
+    .skill-content{padding: 100px 0}
+    .skill-content h2 {font-size: 40px}
+    .skill-content hr{width: 36px; border: 2px solid #17181c}
+    .skill-detail{text-align: center;justify-content: center}
+    .skill-detail p{color: rgb(161, 161, 161);}
+    .works {height: 600px;text-align: center;margin: auto}
+    .works-content{padding: 100px 0}
+    .works-content h2 {font-size: 40px}
+    .contact{height: 600px;text-align: center;margin: auto}
+    .contact-content{padding: 100px 0}
+    .contact-content h2 {font-size: 40px}
+    .contact-content h4 {font-size: 22px}
+    .contact-content p {margin: 7px 0 15px}
+    .myphoto{margin: 30px 0}
+    .photo {width: 234px;height: 234px;object-fit: cover;border-radius: 50%;object-position: center top}
+    @media (max-width:618px){
+      .link{display: none;}
+    }
+    @media (max-width:1050px){
+      .main-title-content {
+        margin: 0;
+      }
+    }
+  </style>
+    <script>
+    $(document).scroll(function () {
+    var scroll = $(this).scrollTop();
+    const element =  document.querySelector('.about-content')
+    const element2 =  document.querySelector('.skill-content')
+    const element3 =  document.querySelector('.works-content')
+    const element4 =  document.querySelector('.contact-content')
+    if (scroll > 100 && scroll <150) {
+      element.classList.add('animated', 'slideInUp');
+    } if (scroll < 101 ) {
+      element.classList.remove('animated', 'slideInUp');
+    } if (scroll > 600 && scroll <650) {
+      element2.classList.add('animated', 'slideInUp');
+    } if (scroll < 601 ) {
+      element2.classList.remove('animated', 'slideInUp');
+    }if (scroll > 1200 && scroll <1250) {
+      element3.classList.add('animated', 'slideInUp');
+    }if (scroll < 1201 ) {
+      element3.classList.remove('animated', 'slideInUp');
+    }if (scroll > 1800 && scroll <1850) {
+      element4.classList.add('animated', 'slideInUp');
+    }if (scroll < 1801 ) {
+      element4.classList.remove('animated', 'slideInUp');
+    }
+    });
+    </script>
+        
+  <div class="wrap">
+    <div class="indexmenu">
+      <div class="kuologo">
+        <a href="#page1"><img src="images/kuo.png"><h2>KUO</h2></a>
+      </div>
+      <div class="link">
+        <ul class="menu">
+          <li class><a href="#page2">ABOUT</a></li>		
+          <li class><a href="#page3">SKILL</a></li>
+          <li class><a href="#page4">WORKS</a></li>
+          <li class><a href="#page5">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+         <!-- MENU -->
+    <div  data-parallax="scroll" data-image-src="images/typewriter.jpg" width="100%" height="100%">
+          <!-- 進入頁 -->
+        <div class="main-title" id="page1">
+          <div class="main-title-content">
+            <h1>KUO</h1> 
+            <h1>RESUME</h1>
+            <hr/>
+            <p>Welcome</p>
+        </div>
+      </div>
+      <!-- about -->
+      <div class="about" id="page2">
+        <div class="about-content">		
+          <h2>ABOUT</h2>
+                <hr>
+                <p>Hi, I am Kuo. </p>   
+        </div>		
+      </div>
+    </div>
+      <!--skill -->
+    <div class="skill" id="page3">
+      <div class="skill-content">
+        <h2>SKILL</h2>
+        <hr>
+        <ul class="skill-detail">
+              <li>	        	
+                <h4>Website Design</h4>
+                <p>網頁設計 / 前端設計</p>
+                <p>Html、css、jquery</p>
+              </li>
+              <li>
+                <h4>Back-End</h4>
+                <p>數據處理 / 後端設計</p>
+                <p>Django</p>
+              </li>
+              <li>
+        </ul>	        
+      </div>
+    </div>
+    <!-- 0000000work000000 -->
+    <div class="works" id="page4">
+      <div class="works-content">		
+        <h2>WORKS</h2>
+
+      </div>		
+    </div>
+    <!-- 0000000contact00000 -->
+    <div  data-parallax="scroll" data-image-src="images/typewriter.jpg" width="100%" height="100%">
+      <div class="contact" id="page5">
+          <div class="contact-content">		
+            <h2>CONTACT</h2>
+            <div class="myphoto">
+              <img src="images/photo.jpg" class="photo">
+            </div>
+            <h4>Kuo</h4>
+            <p>v8661087@gmail.com</p>
+          </div>		
+        </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
