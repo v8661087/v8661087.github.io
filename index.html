@@ -23,7 +23,7 @@
     li{list-style-type: none;flex: none;margin-right: 20px;}
     .wrap {width: 100%;margin: 0 auto;}
     .indexmenu {background: rgba(0, 0, 0, 0.8);display: flex;position: fixed;
-                top:0;width: 100%;height: 59px;justify-content: center;z-index: 1}
+                top:0;width: 100%;height: 59px;justify-content: center;z-index: 1;}
     .kuologo {float: left;padding: 12px 0px 15px 30px;max-width: 729px;width: 100%;}
     .kuologo img{float: left;width: 30px;margin-right: 10px}
     .kuologo h2{float: left;}
@@ -32,7 +32,7 @@
     .menu li{margin-right: 20px;list-style:none;width: 96px;height: 58px;}
     .menu a{transition: .5s; font-family: fantasy;display: flex;color: rgb(161, 161, 161);
             padding: 17px;;justify-content: center;align-items: center}
-    .menu a:hover{background-color: black;color: white;opacity: 1.0;}
+    .menu a:hover{background-color: black;color: white;}
     .main-title-content{height: 357px;padding: 220px 0 0;margin: 0 131px;text-align: center;color: white;}
     .main-title-content h1{font-size: 80px;}
     .main-title-content hr{width: 36px; border: 2px solid #17181c}
@@ -46,9 +46,25 @@
     .skill-content hr{width: 36px; border: 2px solid #17181c}
     .skill-detail{text-align: center;justify-content: center}
     .skill-detail p{color: rgb(161, 161, 161);}
-    .works {height: 600px;text-align: center;margin: auto}
+    .works {height: 600px;text-align: center;margin: auto;z-index: 1  ;}
     .works-content{padding: 100px 0}
     .works-content h2 {font-size: 40px}
+    .works-content hr{width: 36px; border: 2px solid #474e6d}
+    .box {width: 100%;justify-content: center;display: flex;flex-wrap: wrap}
+    .title {position: relative;
+    width: 320px;
+    height: 200px;float: left;margin:1%;
+    color: #262626;  cursor: pointer;}
+    .title:hover{background: rgba(34, 34, 34, 0.5);transition: 0.3s;color: white}
+    .title:hover .title-center{display: block;}
+    .title-center {position: relative;top: 81px;
+    display: none;
+  vertical-align: middle;
+  line-height: 25px;}
+    
+    .works-image {position: absolute;left: 0;top:0;
+    width: 320px;height: 200px;;border: 1px white solid;z-index: -1;}
+    .modal-image {max-width: 900px;width: 100%;margin: 18px 0;border: 1px solid white}
     .contact{height: 600px;text-align: center;margin: auto}
     .contact-content{padding-top: 100px}
     .contact-content h2 {font-size: 40px}
@@ -58,6 +74,9 @@
     .photo {width: 234px;height: 234px;object-fit: cover;border-radius: 50%;object-position: center top;
     border: #17181c solid 9px}
     .github img{width: 40px;border-radius: 50%;}
+    .check {padding: 6px 9px;border-radius: 300px;background-color: black;
+    font-size: 14px;margin-right: 18px}
+    .p-check{margin-top: 6px}
     @media (max-width:618px){
       .link{display: none;}
     }
@@ -109,7 +128,7 @@
       </div>
     </div>
          <!-- MENU -->
-    <div  data-parallax="scroll" data-image-src="images/typewriter.jpg" width="100%" height="100%">
+    <div data-parallax="scroll" data-image-src="images/typewriter.jpg" width="100%" height="100%">
           <!-- 進入頁 -->
         <div class="main-title" id="page1">
           <div class="main-title-content">
@@ -137,7 +156,7 @@
               <li>	        	
                 <h4>Website Design</h4>
                 <p>網頁設計 / 前端設計</p>
-                <p>Html、css、jquery</p>
+                <p>Html、css、javascript</p>
               </li>
               <li>
                 <h4>Back-End</h4>
@@ -152,7 +171,33 @@
     <div class="works" id="page4">
       <div class="works-content">		
         <h2>WORKS</h2>
-
+        <hr>
+         
+              <div id="myBtn" class="box">
+                <div class="title" id="works01">
+                  <div class="title-center">
+                    <h4>WEBSITE</h4>
+                    <p>部落格</p>
+                  </div>
+                  <img src="images/blog-1.jpg" class="works-image">
+                </div>
+                <div class="title" id="works02">
+                  <div class="title-center">
+                    <h4>WEBSITE</h4>
+                    <p>社群網站</p>
+                  </div>
+                  <img src="images/mate-1.jpg" class="works-image">
+                </div>
+                <div class="title" id="works03">
+                  <div class="title-center">
+                    <h4>React.js</h4>
+                    <p>To-Do List</p>
+                  </div>
+                  <img src="images/react.jpg" class="works-image">
+                </div>
+                </div>
+              </div>
+         
       </div>		
     </div>
     <!-- 0000000contact00000 -->
@@ -172,7 +217,141 @@
         </div>
     </div>
   </div>
-
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span id="close" class="close">&times;</span>
+      <p>WEBSITE</p>
+      <h3>部落格</h3>
+      <p class="p-check"><a href="https://kuoblog.herokuapp.com/" class="check" target="_blank">CHECK</a></p>
+      <img src="images/blog-1.jpg" class="modal-image">
+      <img src="images/blog-2.jpg" class="modal-image">
+      <img src="images/blog-3.jpg" class="modal-image">
+    </div>
+  </div>
+  <div id="myModal02" class="modal">
+    <div class="modal-content">
+      <span id="close" class="close">&times;</span>
+      <p>WEBSITE</p>
+      <h3>社交網站</h3>
+      <p class="p-check"><a href="https://kuomate.herokuapp.com/" class="check" target="_blank">CHECK</a></p>
+      <img src="images/mate-1.jpg" class="modal-image">
+      <img src="images/mate-2.jpg" class="modal-image">
+      <img src="images/mate-3.jpg" class="modal-image">
+      <img src="images/mate-4.jpg" class="modal-image">
+      <img src="images/mate-5.jpg" class="modal-image">
+    </div>
+  </div>
+  <div id="myModal03" class="modal">
+    <div class="modal-content">
+      <span id="close" class="close">&times;</span>
+      <p>React.js</p>
+      <h3>To-Do List</h3>
+      <p class="p-check"><a class="check" target="_blank">CHECK</a></p>
+      <img src="images/react.gif" class="modal-image">
+    </div>
+  </div>
+  <style>
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 2; /* Sit on top */
+        padding-top: 60px; /* Location of the box */
+        left: 0;
+        top: 0;
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        text-align: center;
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        background-color: #17181c;
+        margin: auto;
+        padding: 30px 30px 60px;
+        border: 1px solid #888;
+        width: 80%;
+        z-index: 2;
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 33px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      </style>
+      
+      
+      <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+      var modal02 = document.getElementById('myModal02');
+      var modal03 = document.getElementById('myModal03');
+      // Get the button that opens the modal
+      var btn = document.getElementById("works01");
+      var btn02 = document.getElementById("works02");
+      var btn03 = document.getElementById("works03");
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      var span02 = document.getElementsByClassName("close")[1];
+      var span03 = document.getElementsByClassName("close")[2];
+      // When the user clicks the button, open the modal  
+      btn.onclick = function() {
+        modal.style.display = "block";
+        $('body').css('overflow','hidden');
+      }
+      btn02.onclick = function() {
+        modal02.style.display = "block";
+        $('body').css('overflow','hidden');
+      }
+      btn03.onclick = function() {
+        modal03.style.display = "block";
+        $('body').css('overflow','hidden');
+      }
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+        $('body').css('overflow','auto');
+      }
+      span02.onclick = function() {
+        modal02.style.display = "none";
+        $('body').css('overflow','auto');
+      }
+      span03.onclick = function() {
+        modal03.style.display = "none";
+        $('body').css('overflow','auto');
+      }
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          $('body').css('overflow','auto');
+        }
+        if (event.target == modal02) {
+          modal02.style.display = "none";
+          $('body').css('overflow','auto');
+        }
+        if (event.target == modal03) {
+          modal03.style.display = "none";
+          $('body').css('overflow','auto');
+        }
+  }
+      
+      </script>
 </body>
 
 </html>
