@@ -1,0 +1,25 @@
+{
+  "name": "v8661087.github.io",
+  "version": "1.0.0",
+  "description": "我的個人網頁",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v8661087/v8661087.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v8661087/v8661087.github.io/issues"
+  },
+  "homepage": "https://github.com/v8661087/v8661087.github.io#readme",
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "gulp": "^4.0.1",
+    "gulp-postcss": "^8.0.0"
+  }
+}
