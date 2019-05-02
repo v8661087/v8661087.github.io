@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title>台北夜市</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  </head>
+  <body>
+      <style>
+      body{
+        background-color: #17181c;
+      color:gray}
+      </style>
+    <h1>台北夜市</h1>
+    <a>請選擇夜市名稱:</a>
+      <select id="mySelect" onchange="myFunction()">
+        <option value =""></option>
+        <option value ="大龍街夜市">大龍街夜市</option>
+        <option value ="廣州街觀光夜市">廣州街觀光夜市</option>
+        <option value="華西街觀光夜市">華西街觀光夜市</option>
+        <option value="景美夜市">景美夜市</option>
+        <option value="臨江街觀光夜市">臨江街觀光夜市</option>
+        <option value="遼寧街夜市">遼寧街夜市</option>
+        <option value="南機場夜市">南機場夜市</option>
+        <option value="寧夏觀光夜市">寧夏觀光夜市</option>
+        <option value="饒河街觀光夜市">饒河街觀光夜市</option>
+        <option value="雙城街夜市">雙城街夜市</option>
+        <option value="士林觀光夜市">士林觀光夜市</option>
+        <option value="梧州街觀光夜市">梧州街觀光夜市</option>
+        <option value="西昌街觀光夜市">西昌街觀光夜市</option>
+        <option value="延三觀光夜市">延三觀光夜市</option>
+        <option value="梧州街觀光夜市">梧州街觀光夜市</option>
+      </select>
+      <hr/>
+    <div id="1"></div>
+      <script>
+        function myFunction(){
+          $("#1").empty();
+          $.ajax({
+            url: 'https://data.taipei/api/getDatasetInfo/downloadResource?id=8a569b5b-0cb1-4c7f-a064-780b3301354c&rid=da4a214f-0c3d-437e-9312-34e5671db2a8',
+            dataType: 'json',
+          })
+          .done(function(msg) {
+            console.log();
+            var x = document.getElementById("mySelect").selectedIndex;
+            var y = document.getElementById("mySelect").options;
+              
+            for(i=0;i<965;i++){
+              if(y[x].value == msg[i].夜市名稱){
+              $('#1').append(msg[i].攤位名稱 + "<br/>"+ msg[i].其他相關產品 + "<hr/>" );
+              } 
+            }
+          })
+        }
+      </script>
+  </body>
+</html>
