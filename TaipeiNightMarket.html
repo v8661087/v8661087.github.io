@@ -21,7 +21,7 @@
     <h1>台北夜市</h1>
     <a id='choice'>請選擇夜市名稱:</a>
       <select id="mySelect" onchange="myFunction()">
-        <option value =""></option>
+        <option value ="">請選擇</option>
         <option value ="大龍街夜市">大龍街夜市</option>
         <option value ="廣州街觀光夜市">廣州街觀光夜市</option>
         <option value="華西街觀光夜市">華西街觀光夜市</option>
@@ -48,7 +48,6 @@
             dataType: 'json',
           })
           .done(function(msg) {
-            console.log();
             var x = document.getElementById("mySelect").selectedIndex;
             var y = document.getElementById("mySelect").options;
               
