@@ -23,13 +23,13 @@
       #choice{
         color: rgb(92, 143, 255);
       }
-      .list{
+      .listTitle{
         display: flex;
-        margin: auto;
-        padding: 6px;
-        border-bottom: 1px rgb(145, 145, 145) solid;
         text-align: left;
-        width: 630px;
+        border-bottom: 1px rgb(145, 145, 145) solid;
+        width: 660px;
+        height: 33px;
+        font-weight: bold;
       }
       select{
         padding: 3px;
@@ -38,17 +38,38 @@
         outline: none;
       }
       .name{
+        flex:none;
         width:300px;
       }
       .food{
+        flex:none;
         width: 600px;
       }
-      
+      #map {
+        flex: none;
+        margin: 9px;
+        width: 360px;
+        height: 360px; 
+        }
+      .article{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .listEach{
+        display: flex;
+        padding: 6px;
+        border-bottom: 1px rgb(145, 145, 145) solid;
+        text-align: left;
+        width: 660px;
+      }
+      #NightMarket {
+        width: 660px;
+      }
       </style>
     <header>
     <h1>台北夜市查詢</h1>
     <a id='choice'>請選擇夜市名稱:</a>
-      <select  id="mySelect" onchange="myFunction()">
+      <select  id="mySelect" onchange="information();myFunction()">
         <option value ="">請選擇</option>
         <option value ="大龍街夜市">大龍街夜市</option>
         <option value ="廣州街觀光夜市">廣州街觀光夜市</option>
@@ -67,18 +88,135 @@
         <option value="梧州街觀光夜市">梧州街觀光夜市</option>
       </select>
     </header>
+    <div class="article">
+    <div id="map"></div>
     <div class="list">
-      <table>
-        <tr>
-          <td class="name">攤位名稱</td>
-          <td class="food">特色美食</td>
-        </tr>
-      </table>
+      <div id="NightMarket"></div>
+      <div class="listTitle">
+        <div class="name">攤位名稱</div>
+        <div class="food">特色美食</div>
+      </div>
+      <div id="listContent"></div>
     </div>
-    <div id="1"></div>
+  </div>
+    
+    
+    <script type="text/javascript">
+      function initMap() {
+          //設定中心點座標
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: {lat: 25.0477505, lng: 121.5170599}
+        });
+        //顯示各區的點
+        var data =[
+          {
+            position: {lat: 25.088650, lng: 121.524396},
+            map: map,
+            title: '士林觀光夜市'
+          },
+          {
+            position: {lat: 25.055955, lng: 121.515059},
+            map: map,
+            title: '寧夏觀光夜市'
+          },
+          {
+            position: {lat: 25.038608, lng: 121.498443 },
+            map: map,
+            title: '華西街觀光夜市'
+          },
+          {
+            position: {lat: 25.036760, lng: 121.497592},
+            map: map,
+            title: '廣州街觀光夜市'
+          },
+          {
+            position: {lat:25.036341,  lng: 121.497596},
+            map: map,
+            title: '梧州街觀光夜市'
+          },
+          {
+            position: {lat: 25.036768, lng: 121.500560 },
+            map: map,
+            title: '西昌街觀光夜市'
+          },
+          {
+            position: {lat: 25.029151, lng:  121.505872},
+            map: map,
+            title: '南機場夜市'
+          },
+          {
+            position: {lat: 24.991503, lng: 121.541845},
+            map: map,
+            title: '景美夜市'
+          },
+          {
+            position: {lat: 25.050915, lng:  121.577515},
+            map: map,
+            title: '饒河街觀光夜市'
+          },
+          {
+            position: {lat: 25.030215,  lng:121.554209},
+            map: map,
+            title: '臨江街觀光夜市'
+          },
+          {
+            position: {lat: 25.067854,   lng:121.515871},
+            map: map,
+            title: '大龍街夜市'
+          },
+          {
+            position: {lat: 25.063353,  lng: 121.511152},
+            map: map,
+            title: '延三觀光夜市'
+          },
+          {
+            position: {lat: 25.049081,  lng: 121.542153},
+            map: map,
+            title: '遼寧街夜市'
+          },
+          {
+            position: {lat: 25.064292,  lng: 121.524372},
+            map: map,
+            title: '雙城街夜市'
+          },
+        ]
+  //跑迴圈依序將值塞入到 marker
+  for(i=0;i<data.length;i++){
+    new google.maps.Marker(data[i]);
+  }
+
+}
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap">
+  </script>
       <script>
+        function information(){
+          $("#listContent").empty();
+          $("#NightMarket").empty();
+          $.ajax({
+            url: 'https://data.taipei/api/getDatasetInfo/downloadResource?id=8a569b5b-0cb1-4c7f-a064-780b3301354c&rid=9744ea1c-aafb-471c-8bb8-04f398ad415a',
+            dataType: 'json',
+          })
+          .done(function(info) {
+            var x = document.getElementById("mySelect").selectedIndex;
+            var y = document.getElementById("mySelect").options;
+            console.log(info);
+            for(i=0;i<15;i++){
+              if(y[x].value == info[i].夜市名稱){
+                if(info[i].交通資訊 != null){
+                  $('#NightMarket').append("夜市名稱:"+ info[i].夜市名稱 +"<br/>"+"</div>"+"<div>" + "交通資訊:" +info[i].交通資訊+"<br/>" +"所在位置:"+ info[i].所在位置+"<br/>"+ "營業時間:"+ info[i].營業時間);
+                }else{
+                  $('#NightMarket').append("夜市名稱:"+ info[i].夜市名稱 +"<br/>"+"</div>"+"<div>" + "交通資訊:"+"<br/>" +"所在位置:"+ info[i].所在位置+"<br/>"+ "營業時間:"+ info[i].營業時間);
+                }
+              } 
+            }
+          })
+        }
+        
         function myFunction(){
-          $("#1").empty();
+          
           $.ajax({
             url: 'https://data.taipei/api/getDatasetInfo/downloadResource?id=8a569b5b-0cb1-4c7f-a064-780b3301354c&rid=da4a214f-0c3d-437e-9312-34e5671db2a8',
             dataType: 'json',
@@ -89,7 +227,7 @@
               
             for(i=0;i<965;i++){
               if(y[x].value == msg[i].夜市名稱){
-              $('#1').append("<div class='list'>"+"<span class='name'>"+ msg[i].攤位名稱+"</span>"+"<span class='food'>"+ msg[i].其他相關產品 + "</span>"+ "</div>");
+              $('#listContent').append("<div class='listEach'>"+"<div class='name'>"+ msg[i].攤位名稱+"</div>"+"<div class='food'>"+ msg[i].其他相關產品 + "</div>"+ "</div>");
               } 
             }
           })
