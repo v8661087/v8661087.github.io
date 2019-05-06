@@ -5,22 +5,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
-    <title>台北夜市</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>台北夜市查詢</title>
     <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
   </head>
   <body>
       <style>
       body{
         background-color: #17181c;
-      color:rgb(182, 182, 182)}
+        color:rgb(182, 182, 182);
+        background: url(https://cdn.pixabay.com/photo/2016/12/29/18/44/background-1939128_960_720.jpg)
+      }
+      header{
+        margin: 9px;
+        text-align: center;
+      }
       #choice{
         color: rgb(92, 143, 255);
       }
+      .list{
+        display: flex;
+        margin: auto;
+        padding: 6px;
+        border-bottom: 1px rgb(145, 145, 145) solid;
+        text-align: left;
+        width: 630px;
+      }
+      select{
+        padding: 3px;
+        background-color: #17181c;
+        color:rgb(182, 182, 182);
+        outline: none;
+      }
+      .name{
+        width:300px;
+      }
+      .food{
+        width: 600px;
+      }
+      
       </style>
-    <h1>台北夜市</h1>
+    <header>
+    <h1>台北夜市查詢</h1>
     <a id='choice'>請選擇夜市名稱:</a>
-      <select id="mySelect" onchange="myFunction()">
+      <select  id="mySelect" onchange="myFunction()">
         <option value ="">請選擇</option>
         <option value ="大龍街夜市">大龍街夜市</option>
         <option value ="廣州街觀光夜市">廣州街觀光夜市</option>
@@ -38,7 +66,15 @@
         <option value="延三觀光夜市">延三觀光夜市</option>
         <option value="梧州街觀光夜市">梧州街觀光夜市</option>
       </select>
-      <hr/>
+    </header>
+    <div class="list">
+      <table>
+        <tr>
+          <td class="name">攤位名稱</td>
+          <td class="food">特色美食</td>
+        </tr>
+      </table>
+    </div>
     <div id="1"></div>
       <script>
         function myFunction(){
@@ -53,7 +89,7 @@
               
             for(i=0;i<965;i++){
               if(y[x].value == msg[i].夜市名稱){
-              $('#1').append(msg[i].攤位名稱 + "<br/>"+ msg[i].其他相關產品 + "<hr/>" );
+              $('#1').append("<div class='list'>"+"<span class='name'>"+ msg[i].攤位名稱+"</span>"+"<span class='food'>"+ msg[i].其他相關產品 + "</span>"+ "</div>");
               } 
             }
           })
