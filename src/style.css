@@ -40,7 +40,7 @@ li{list-style-type: none;-webkit-box-flex: 0;-ms-flex: none;flex: none;margin-ri
 .title {position: relative;width: 320px;height: 200px;float: left;margin:1%;color: #262626;  cursor: pointer;}
 .title:hover{background: rgba(34, 34, 34, 0.5);-webkit-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;color: white}
 .title:hover .title-center{display: block;}
-.title-center {position: relative;top: 81px;display: none;vertical-align: middle;line-height: 25px;}
+.title-center {position: relative;top: 69px;display: none;vertical-align: middle;line-height: 25px;}
 .works-image {position: absolute;left: 0;top:0;
     width: 320px;height: 200px;;border: 1px white solid;z-index: -1;}
 .modal-image {max-width: 900px;width: 100%;margin: 18px 0;border: 1px solid white}
