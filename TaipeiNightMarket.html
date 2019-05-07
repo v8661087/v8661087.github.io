@@ -30,6 +30,7 @@
         width: 660px;
         height: 33px;
         font-weight: bold;
+        margin: 6px
       }
       select{
         padding: 3px;
@@ -43,14 +44,22 @@
       }
       .food{
         flex:none;
-        width: 600px;
+        width: 360px;
       }
       #map {
         flex: none;
         margin: 9px;
         width: 360px;
         height: 360px; 
+      }
+      @media (max-width:1200px){
+        #map{
+          margin: auto;
         }
+        .list{
+          margin: auto;
+        }
+      }
       .article{
         display: flex;
         flex-wrap: wrap;
@@ -63,14 +72,15 @@
         width: 660px;
       }
       #NightMarket {
+        padding: 6px;
         width: 660px;
       }
       </style>
     <header>
-    <h1>台北夜市查詢</h1>
+    <h1>台北夜市</h1>
     <a id='choice'>請選擇夜市名稱:</a>
       <select  id="mySelect" onchange="information();myFunction()">
-        <option value ="">請選擇</option>
+        <option value ="請選擇">請選擇</option>
         <option value ="大龍街夜市">大龍街夜市</option>
         <option value ="廣州街觀光夜市">廣州街觀光夜市</option>
         <option value="華西街觀光夜市">華西街觀光夜市</option>
@@ -181,12 +191,28 @@
             title: '雙城街夜市'
           },
         ]
-  //跑迴圈依序將值塞入到 marker
-  for(i=0;i<data.length;i++){
-    new google.maps.Marker(data[i]);
-  }
-
-}
+        //跑迴圈依序將值塞入到 marker
+        for(let marker = [], i=0;i<data.length;i++){
+          marker[i] = new google.maps.Marker(data[i]);
+          console.log(marker[i].title)
+          marker[i].addListener('click', function() {
+            map.setZoom(15);
+            map.setCenter(marker[i].getPosition());
+            document.getElementById("mySelect").value = marker[i].title
+            information();
+            myFunction();
+          });
+          document.getElementById("mySelect").addEventListener("change",function(){
+            if(document.getElementById("mySelect").value == marker[i].title){
+              map.setZoom(15);
+              map.setCenter(marker[i].getPosition());
+            }else if(document.getElementById("mySelect").value == "請選擇"){
+              map.setZoom(12);
+              map.setCenter({lat: 25.0477505, lng: 121.5170599})
+            }
+          })
+        }
+      }
   </script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap">
@@ -200,11 +226,8 @@
             dataType: 'json',
           })
           .done(function(info) {
-            var x = document.getElementById("mySelect").selectedIndex;
-            var y = document.getElementById("mySelect").options;
-            console.log(info);
             for(i=0;i<15;i++){
-              if(y[x].value == info[i].夜市名稱){
+              if(info[i].夜市名稱 == document.getElementById("mySelect").value){
                 if(info[i].交通資訊 != null){
                   $('#NightMarket').append("夜市名稱:"+ info[i].夜市名稱 +"<br/>"+"</div>"+"<div>" + "交通資訊:" +info[i].交通資訊+"<br/>" +"所在位置:"+ info[i].所在位置+"<br/>"+ "營業時間:"+ info[i].營業時間);
                 }else{
@@ -216,17 +239,13 @@
         }
         
         function myFunction(){
-          
           $.ajax({
             url: 'https://data.taipei/api/getDatasetInfo/downloadResource?id=8a569b5b-0cb1-4c7f-a064-780b3301354c&rid=da4a214f-0c3d-437e-9312-34e5671db2a8',
             dataType: 'json',
           })
           .done(function(msg) {
-            var x = document.getElementById("mySelect").selectedIndex;
-            var y = document.getElementById("mySelect").options;
-              
             for(i=0;i<965;i++){
-              if(y[x].value == msg[i].夜市名稱){
+              if(msg[i].夜市名稱 == document.getElementById("mySelect").value){
               $('#listContent').append("<div class='listEach'>"+"<div class='name'>"+ msg[i].攤位名稱+"</div>"+"<div class='food'>"+ msg[i].其他相關產品 + "</div>"+ "</div>");
               } 
             }
