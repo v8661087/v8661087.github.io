@@ -137,7 +137,7 @@ li {
   border: 2px solid #17181c;
 }
 .skill {
-  height: 600px;
+  min-height: 600px;height: 100%;
   background-color: rgb(0, 57, 95);
   text-align: center;
   margin: auto;
@@ -164,9 +164,18 @@ li {
 }
 .skill-detail li {
   padding: 9px 30px;
+  margin: 0 auto;
 }
 .skill-detail p {
   color: rgb(161, 161, 161);
+}
+
+.skill-detail-image {
+  border-radius: 5px;
+  transition: transform 2s;
+}
+.skill-detail-image:hover {
+  transform: rotate(360deg);
 }
 .works {
   min-height: 600px;
