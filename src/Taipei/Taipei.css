@@ -1,0 +1,68 @@
+body {
+  background-color: #17181c;
+  color: white;
+  background: url(../../images/NightBackground.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+header {
+  margin: 9px;
+  text-align: center;
+}
+#choice {
+  color: rgb(92, 143, 255);
+}
+.listTitle {
+  display: flex;
+  text-align: left;
+  border-bottom: 1px rgb(145, 145, 145) solid;
+  width: 660px;
+  height: 33px;
+  font-weight: bold;
+  margin: 6px;
+}
+select {
+  padding: 3px;
+  background-color: #17181c;
+  color: rgb(182, 182, 182);
+  outline: none;
+}
+.name {
+  flex: none;
+  width: 300px;
+}
+.food {
+  flex: none;
+  width: 360px;
+}
+#map {
+  flex: none;
+  margin: 9px;
+  width: 360px;
+  height: 360px;
+}
+@media (max-width: 1200px) {
+  #map {
+    margin: auto;
+  }
+  .list {
+    margin: auto;
+  }
+}
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
+.listEach {
+  display: flex;
+  padding: 6px;
+  border-bottom: 1px rgb(145, 145, 145) solid;
+  text-align: left;
+  width: 660px;
+}
+#NightMarket {
+  padding: 6px;
+  width: 660px;
+}

@@ -7,10 +7,12 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports={
     context: path.resolve(__dirname, 'src'),
     entry:{
-      index:['./index.js','./style.css']
+      index:['./style.css'],
+      modal:['./modal.js'],
+      scroll:['./scroll.js']
     },
     output:{
-        filename:'index.bundle.js',
+        filename:'[name].bundle.js',
         path: path.resolve(__dirname,'./dist')
     },
     mode: 'production',
@@ -25,7 +27,7 @@ module.exports={
             ]
         }
       }),
-      new OptimizeCssAssetsPlugin({assetNameRegExp: /\.css$/g,
+      /*new OptimizeCssAssetsPlugin({assetNameRegExp: /\.css$/g,
         cssProcessorOptions: {
           safe: true,
           autoprefixer: { disable: true },
@@ -35,7 +37,7 @@ module.exports={
           }
         },
         canPrint: true
-      })
+      })*/
     ],
     module: {
       rules: [
