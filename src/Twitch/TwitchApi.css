@@ -6,6 +6,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
 }
 h1 {
   text-align: center;
@@ -14,27 +17,42 @@ a {
   text-decoration: none;
   color: white;
 }
+.language{
+  display: flex;
+  justify-content: center
+}
+button{
+  background-color: #424242;
+  color:white;
+  text-align: center;
+  width: 99px;
+  height: 45px;
+  padding: 3px 6px;
+  font-size: 15px;
+  border:none;
+  cursor: pointer;
+  outline: none
+}
+button:hover{
+  background-color: #1f1c1c;
+}
+.select{
+  background-color: #1f1c1c;
+}
 .channels {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 .channel {
-  width: 320px;
+  width: 360px;
   margin: 21px;
   background: rgba(24, 24, 24, 0.9);
 }
 
-.channel-logo {
-  float: left;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  margin: 0 9px 3px;
-}
 .channel-status {
   float: left;
-  width: 252px;
+  width: 312px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -42,4 +60,17 @@ a {
 .channel-name {
   float: left;
   width: 252px;
+}
+.channel-viewer{
+  padding-right: 9px;
+  float: right;
+}
+.circle{
+  float: left;
+  width: 9px;
+  height: 9px;
+  display: block;
+  border-radius:50%;
+  background: rgb(167, 0, 0);
+  margin: 6px
 }

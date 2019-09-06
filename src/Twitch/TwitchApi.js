@@ -1,45 +1,111 @@
-var client_Id = "3ojsc7ffo62bgyp8yak47f53zd8mqf"; //developer id
-var game = "League%20of%20Legends"; //game type
-var limit = 20; //max object
-var language = "zh-tw";
+let url ="https://api.twitch.tv/helix/streams?game_id=21779&language=zh"
 $.ajax({
   url:
-    "https://api.twitch.tv/kraken/streams/?client_id=" +
-    client_Id +
-    "&amp;game=" +
-    game +
-    "&amp;limit=" +
-    limit +
-    "&amp;language=" +
-    language,
-  dataType: "jsonp",
-  // 可以自訂回傳方法的字串。預設是 callback
-  jsonp: "callback",
-  // 規定只能用 GET
+    url ,
+    headers : {'Client-ID':'3ojsc7ffo62bgyp8yak47f53zd8mqf'},
   type: "GET"
   // 傳遞的參數
 }).done(function(info) {
   console.log(info);
-  for (let i = 0; i < info.streams.length; i++) {
+  for (let i = 0; i < info.data.length; i++) {
+    let account = info.data[i].thumbnail_url.split("_")[2].split("-")[0]
+   // console.log(account)
     $("#channels").append(
       "<div class='channel'>" +
-        "<a href='" +
-        info.streams[i].channel.url +
+        "<a href='https://twitch.tv/" +
+        account +
         "'>" +
-        "<img src='" +
-        info.streams[i].preview.medium +
-        "'>" +
-        "<img class='channel-logo' src='" +
-        info.streams[i].channel.logo +
-        "'>" +
-        "<div class='channel-status'>" +
-        info.streams[i].channel.status +
-        "</div>" +
+        "<img src='https://static-cdn.jtvnw.net/previews-ttv/live_user_" +
+        account + "-360x204.jpg'>"
+        +
         "<div class='channel-name'>" +
-        info.streams[i].channel.name +
+        info.data[i].user_name +"("+account+")" +
+        "</div>" + "<span class='channel-viewer'><span class='circle'></span>"+info.data[i].viewer_count+"</span>" +
+        "<div class='channel-status' title='"+info.data[i].title+"'>"  +
+        info.data[i].title +
         "</div>" +
         "</a>" +
         "</div>"
     );
   }
 });
+
+$('#zh').click(function(e){
+  if($(this).hasClass("select")){
+  }else{
+    $(this).addClass('select');
+    $('#en').removeClass('select');
+    $('#channels').empty();
+    $.ajax({
+      url:
+        url ,
+        headers : {'Client-ID':'3ojsc7ffo62bgyp8yak47f53zd8mqf'},
+      type: "GET"
+      // 傳遞的參數
+    }).done(function(info) {
+      console.log(info);
+      for (let i = 0; i < info.data.length; i++) {
+        let account = info.data[i].thumbnail_url.split("_")[2].split("-")[0]
+       // console.log(account)
+        $("#channels").append(
+          "<div class='channel'>" +
+            "<a href='https://twitch.tv/" +
+            account +
+            "'>" +
+            "<img src='https://static-cdn.jtvnw.net/previews-ttv/live_user_" +
+            account + "-360x204.jpg'>"
+            +
+            "<div class='channel-name'>" +
+            info.data[i].user_name +"("+account+")" +
+            "</div>" + "<span class='channel-viewer'><span class='circle'></span>"+info.data[i].viewer_count+"</span>" +
+            "<div class='channel-status' title='"+info.data[i].title+"'>"  +
+            info.data[i].title +
+            "</div>" +
+            "</a>" +
+            "</div>"
+        );
+      }
+    });
+    
+  }
+})
+$('#en').click(function(){
+  if($(this).hasClass("select")){
+  }else{
+$(this).addClass('select');
+$('#zh').removeClass('select');
+$('#channels').empty();
+let url = "https://api.twitch.tv/helix/streams?game_id=21779&language=en"
+$.ajax({
+  url:
+    url ,
+    headers : {'Client-ID':'3ojsc7ffo62bgyp8yak47f53zd8mqf'},
+  type: "GET"
+  // 傳遞的參數
+}).done(function(info) {
+  console.log(info);
+  for (let i = 0; i < info.data.length; i++) {
+    let account = info.data[i].thumbnail_url.split("_")[2].split("-")[0]
+   // console.log(account)
+    $("#channels").append(
+      "<div class='channel'>" +
+        "<a href='https://twitch.tv/" +
+        account +
+        "'>" +
+        "<img src='https://static-cdn.jtvnw.net/previews-ttv/live_user_" +
+        account + "-360x204.jpg'>"
+        +
+        "<div class='channel-name'>" +
+        info.data[i].user_name +"("+account+")" +
+        "</div>" + "<span class='channel-viewer'><span class='circle'></span>"+info.data[i].viewer_count+"</span>" +
+        "<div class='channel-status' title='"+info.data[i].title+"'>"  +
+        info.data[i].title +
+        "</div>" +
+        "</a>" +
+        "</div>"
+    );
+  }
+});
+  }
+})
+
