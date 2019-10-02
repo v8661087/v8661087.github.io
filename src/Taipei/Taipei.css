@@ -1,18 +1,31 @@
 body {
   background-color: #17181c;
   color: white;
-  background: url(../../images/NightBackground.jpg);
+  background: url("../../images/NightBackground.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  
+}
+a{
+  text-decoration: none
+}
+h1{
+  margin: 0 9px
 }
 header {
-  margin: 9px;
+  margin: 0 9px 9px;
   text-align: center;
 }
 #choice {
   color: rgb(92, 143, 255);
+}
+.list{
+  margin: 0 auto
 }
 .listTitle {
   display: flex;
@@ -21,13 +34,15 @@ header {
   width: 660px;
   height: 33px;
   font-weight: bold;
-  margin: 6px;
+  margin: 6px 0 0 ;
 }
 select {
-  padding: 3px;
+  width: 180px;
+  padding: 6px;
   background-color: #17181c;
   color: rgb(182, 182, 182);
   outline: none;
+  font-size: 18px
 }
 .name {
   flex: none;
@@ -39,18 +54,11 @@ select {
 }
 #map {
   flex: none;
-  margin: 9px;
+  margin:0 auto;
   width: 360px;
   height: 360px;
 }
-@media (max-width: 1200px) {
-  #map {
-    margin: auto;
-  }
-  .list {
-    margin: auto;
-  }
-}
+
 .article {
   display: flex;
   flex-wrap: wrap;
@@ -63,6 +71,24 @@ select {
   width: 660px;
 }
 #NightMarket {
-  padding: 6px;
   width: 660px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: rgb(59, 59, 59);
+  color: rgb(209, 209, 209);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px
 }

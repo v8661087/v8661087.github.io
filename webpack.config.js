@@ -7,7 +7,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports={
     context: path.resolve(__dirname, 'src'),
     entry:{
-      index:['./style.css'],
+      index:['./style1.css'],
       modal:['./modal.js'],
       scroll:['./scroll.js']
     },

@@ -13,12 +13,12 @@ var btn04 = document.getElementById("works04");
 var btn05 = document.getElementById("works05");
 var btn06 = document.getElementById("works06");
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-var span02 = document.getElementsByClassName("close")[1];
-var span03 = document.getElementsByClassName("close")[2];
-var span04 = document.getElementsByClassName("close")[3];
-var span05 = document.getElementsByClassName("close")[4];
-var span06 = document.getElementsByClassName("close")[5];
+var span = document.getElementsByClassName("modal__close")[0];
+var span02 = document.getElementsByClassName("modal__close")[1];
+var span03 = document.getElementsByClassName("modal__close")[2];
+var span04 = document.getElementsByClassName("modal__close")[3];
+var span05 = document.getElementsByClassName("modal__close")[4];
+var span06 = document.getElementsByClassName("modal__close")[5];
 // When the user clicks the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";

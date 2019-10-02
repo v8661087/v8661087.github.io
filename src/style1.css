@@ -89,7 +89,6 @@ ul {
 
 .menu-link a {
   -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
   font-family: fantasy;
   display: -webkit-box;
@@ -133,8 +132,6 @@ ul {
 }
 
 .about {
-  background: -webkit-linear-gradient(45deg, #4156cc, #00965c);
-  background: -o-linear-gradient(45deg, #4156cc, #00965c);
   background: linear-gradient(45deg, #4156cc, #00965c);
   min-height: 100vh;
   height: 100%;
@@ -195,7 +192,6 @@ ul {
   border-radius: 5px;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
-  -o-transition: transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
   max-width: 300px;
@@ -210,8 +206,6 @@ ul {
 .works {
   min-height: 100vh;
   height: 100%;
-  background: -webkit-linear-gradient(45deg, #a33459, #1b9cad);
-  background: -o-linear-gradient(45deg, #a33459, #1b9cad);
   background: linear-gradient(45deg, #a33459, #1b9cad);
   text-align: center;
 }
@@ -268,7 +262,6 @@ ul {
   height: 200px;
   border: 1px #9c9c9c solid;
   -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -372,3 +365,4 @@ ul {
     display: none;
   }
 }
+/*# sourceMappingURL=style1.css.map */
