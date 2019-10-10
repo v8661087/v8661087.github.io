@@ -7,7 +7,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports={
     context: path.resolve(__dirname, 'src'),
     entry:{
-      index:['./style1.css'],
+      index:['./style.scss'],
       modal:['./modal.js'],
       scroll:['./scroll.js']
     },
@@ -42,12 +42,13 @@ module.exports={
     module: {
       rules: [
         {
-            test: /\.css$/,
+            test: /\.scss$/,
             exclude: /node_modules/,
             use: [
                 MiniCssExtractPlugin.loader,
                 "css-loader",
-                "postcss-loader"
+                "postcss-loader",
+                "sass-loader"
             ]
         }
       ]

@@ -4,7 +4,6 @@ $(document).scroll(function() {
   const element2 = document.querySelector(".skill-content");
   const element3 = document.querySelector(".works-content");
   const element4 = document.querySelector(".contact-content");
-  console.log(window.scrollY)
   if (scroll > 66) {
     element.classList.add("animated", "slideInUp");
   }
