@@ -1,3 +1,0 @@
-function kuo(){
-    return kuo
-}
