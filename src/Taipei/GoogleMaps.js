@@ -85,8 +85,8 @@ for (let marker = [], i = 0; i < data.length; i++) {
         map.setCenter(marker[i].getPosition());
         if (document.getElementById("mySelect").value !== marker[i].title) {
             document.getElementById("mySelect").value = marker[i].title;
-            information();
-            myFunction();
+            GetMarket();
+            GetFood();
         }
     });
     document.getElementById("mySelect").addEventListener("change", function() {

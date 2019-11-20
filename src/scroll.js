@@ -4,28 +4,60 @@ $(document).scroll(function() {
   const element2 = document.querySelector(".skill-content");
   const element3 = document.querySelector(".works-content");
   const element4 = document.querySelector(".contact-content");
-  if (scroll > 66) {
+  if (scroll > $(".main").height() - $(window).height()) {
     element.classList.add("animated", "slideInUp");
   }
-  if (scroll < 66) {
+  if (scroll <= $(".main").height() - $(window).height()) {
     element.classList.remove("animated", "slideInUp");
   }
-  if (scroll > 572) {
+  if (
+    scroll >
+    $(".main").height() + $(".about").height() - $(window).height()
+  ) {
     element2.classList.add("animated", "slideInUp");
   }
-  if (scroll < 572) {
+  if (
+    scroll <=
+    $(".main").height() + $(".about").height() - $(window).height()
+  ) {
     element2.classList.remove("animated", "slideInUp");
   }
-  if (scroll > 1211) {
+  if (
+    scroll >
+    $(".main").height() +
+      $(".about").height() +
+      $(".skill").height() -
+      $(window).height()
+  ) {
     element3.classList.add("animated", "zoomIn");
   }
-  if (scroll < 1212) {
+  if (
+    scroll <=
+    $(".main").height() +
+      $(".about").height() +
+      $(".skill").height() -
+      $(window).height()
+  ) {
     element3.classList.remove("animated", "zoomIn");
   }
-  if (scroll > 1800 && scroll < 1900) {
+  if (
+    scroll >
+    $(".main").height() +
+      $(".about").height() +
+      $(".skill").height() +
+      $(".works").height() -
+      $(window).height()
+  ) {
     element4.classList.add("animated", "fadeInLeft");
   }
-  if (scroll < 1801) {
+  if (
+    scroll <
+    $(".main").height() +
+      $(".about").height() +
+      $(".skill").height() +
+      $(".works").height() -
+      $(window).height()
+  ) {
     element4.classList.remove("animated", "fadeInLeft");
   }
 });

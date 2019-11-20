@@ -45,7 +45,6 @@
       </div>
       <!-- MENU -->
       <div data-parallax="scroll" data-image-src="images/typewriter.jpg">
-        <!-- 進入頁 -->
         <div class="main" id="page1">
           <div class="main-content">
             <h1>KUO</h1>
@@ -54,13 +53,15 @@
             <p>Welcome</p>
           </div>
         </div>
-        <!-- about -->
-        <div class="about" id="page2">
-          <div class="about-content">
-            <h1>ABOUT</h1>
-            <hr />
-            <p>Hi ! 我是郭奕良Steven Kuo</p>
-          </div>
+      </div>
+      <!-- about -->
+      <div class="about" id="page2">
+        <div class="about-content">
+          <h1>ABOUT</h1>
+          <hr />
+          <p>Hi，歡迎來到我的個人網站</p>
+          <p>我是郭奕良Steven Kuo</p>
+          <p>自學程式一年，目前主要學習前端</p>
         </div>
       </div>
       <!--skill -->
@@ -74,26 +75,25 @@
                 src="images/FRONTEND.jpg"
                 class="skill-content-detail-image"
               />
-              <p>網頁開發 / 前端設計</p>
-              <p>HTML、CSS、RWD<br />JavaScript、jQuery、React</p>
+              <p>HTML5、CSS3、RWD</p>
+              <p>Sass、Scss、PostCSS</p>
+              <p>JavaScript、jQuery、React</p>
             </li>
             <li>
               <img
                 src="images/BACKEND.jpg"
                 class="skill-content-detail-image"
               />
-              <p>數據處理 / 後端設計</p>
-              <p>Python、Django、網頁爬蟲</p>
+              <p>Django、Python爬蟲、Firebase</p>
             </li>
             <li>
               <img src="images/TOOLS.jpg" class="skill-content-detail-image" />
-              <p>Tools /Development</p>
-              <p>VSCode、NPM、Git<br />Gulp, Webpack</p>
+              <p>VSCode、NPM、Yarn、Git<br />Gulp, Webpack</p>
             </li>
           </ul>
         </div>
       </div>
-      <!-- 0000000works000000 -->
+      <!-- works -->
       <div class="works" id="page4">
         <div class="works-content">
           <h1>WORKS</h1>
@@ -121,16 +121,30 @@
                 class="works-content-items-item-image"
               />
             </div>
-            <div class="works-content-items-item" id="works03">
+            <div class="works-content-items-item slider" id="works03">
               <div class="works-content-items-item-title">
                 <h4>WEBSITE</h4>
                 <p>Works</p>
                 <p>React</p>
               </div>
+              <span>
               <img
                 src="images/React-To-Do List.jpg"
                 class="works-content-items-item-image"
               />
+              </span>
+              <span>
+              <img
+                src="images/React-CommentApp.jpg"
+                class="works-content-items-item-image"
+              />
+              </span>
+              <span>
+              <img
+                src="images/React-WeatherApp.jpg"
+                class="works-content-items-item-image"
+              />
+              </span>
             </div>
             <div class="works-content-items-item" id="works04">
               <div class="works-content-items-item-title">
@@ -168,7 +182,7 @@
           </div>
         </div>
       </div>
-      <!-- 0000000contact00000 -->
+      <!-- contact -->
       <div data-parallax="scroll" data-image-src="images/typewriter.jpg">
         <div class="contact" id="page5">
           <div class="contact-content">
@@ -185,8 +199,8 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <p>WEBSITE</p>
         <h3>部落格</h3>
+        <h3>Django</h3>
         <p>
           <a
             href="https://kuoblog.herokuapp.com/"
@@ -203,8 +217,8 @@
     <div id="myModal02" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <p>WEBSITE</p>
-        <h3>社交網站</h3>
+        <h3>Mate社交網站</h3>
+        <h3>Django</h3>
         <p>
           <a
             href="https://kuomate.herokuapp.com/kuo/"
@@ -223,24 +237,52 @@
     <div id="myModal03" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <p>WEBSITE</p>
         <h3>React-Works</h3>
         <p>
           <a
-            href="https://v8661087.github.io/React-Works/#/To-Do-List"
+            href="https://v8661087.github.io/React-Works/"
             class="modal-content__check"
             target="_blank"
             >Demo</a
           >
         </p>
-        <img src="images/React-To-Do List.gif" class="modal-content-image" />
-        <img src="images/React-CommentApp.gif" class="modal-content-image" />
+        <p>To-Do List</p>
+        <a
+          href="https://v8661087.github.io/React-Works/#/To-Do-List"
+          target="_blank"
+        >
+          <img
+            src="images/React-To-Do List.gif"
+            class="modal-content-image"
+            alt="React-To-Do List"
+        /></a>
+        <p>留言板</p>
+        <a
+          href="https://v8661087.github.io/React-Works/#/CommentApp"
+          target="_blank"
+        >
+          <img
+            src="images/React-CommentApp.gif"
+            class="modal-content-image"
+            alt="React-CommentApp"
+          />
+        </a>
+        <p>目前天氣</p>
+        <a
+          href="https://v8661087.github.io/React-Works/#/WeatherApp"
+          target="_blank"
+        >
+          <img
+            src="images/React-WeatherApp.gif"
+            class="modal-content-image"
+            alt="React-WeatherApp"
+          />
+        </a>
       </div>
     </div>
     <div id="myModal04" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <p>WEBSITE</p>
         <h3>台北夜市</h3>
         <h3>Google Maps API</h3>
         <p>
@@ -258,9 +300,7 @@
     <div id="myModal05" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <p>WEBSITE</p>
-        <h3>Shopping-Cart</h3>
-        <h3>React</h3>
+        <h3>React-Shopping-Cart</h3>
         <p>
           <a
             href="https://v8661087.github.io/React-Shopping-Cart/"
@@ -275,7 +315,6 @@
     <div id="myModal06" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <p>WEBSITE</p>
         <h3>Twitch LOL Streams</h3>
         <h3>Twitch API</h3>
         <p>

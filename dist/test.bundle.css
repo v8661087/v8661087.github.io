@@ -1,0 +1,30 @@
+.block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+          justify-content: center;
+}
+::-webkit-input-placeholder {
+  color: gray;
+}
+::-moz-placeholder {
+  color: gray;
+}
+:-ms-input-placeholder {
+  color: gray;
+}
+::-ms-input-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
+

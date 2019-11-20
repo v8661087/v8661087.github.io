@@ -321,6 +321,7 @@ ul {
 }
 
 .modal-content {
+  position: relative;
   background-color: #17181c;
   margin: auto;
   padding: 30px 30px 60px;
@@ -345,13 +346,14 @@ ul {
   border-radius: 300px;
   background-color: #535353;
   font-size: 18px;
-  margin-right: 18px;
 }
 
 .modal__close {
+  position: absolute;
   color: #aaaaaa;
-  float: right;
-  font-size: 33px;
+  top: 9px;
+  right: 15px;
+  font-size: 39px;
   font-weight: bold;
 }
 
@@ -365,4 +367,4 @@ ul {
     display: none;
   }
 }
-/*# sourceMappingURL=style1.css.map */
+/*# sourceMappingURL=index.css.map */

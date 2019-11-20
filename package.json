@@ -5,19 +5,16 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development"
+    "start": "webpack --mode development",
+    "dev": "webpack-dev-server",
+    "watch": "webpack --watch"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {
-        "browsers": [
-          ">1%",
-          "last 5 versions",
-          "not ie < 10"
-        ]
-      }
-    }
-  },
+  "browserslist": [
+    "last 2 version",
+    "> 0.01%",
+    "maintained node versions",
+    "not dead"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/v8661087/v8661087.github.io.git"
@@ -30,23 +27,26 @@
   },
   "homepage": "https://github.com/v8661087/v8661087.github.io#readme",
   "dependencies": {
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
-    "postcss-cli": "^6.1.2"
+    "postcss-cli": "^6.1.3",
+    "style-loader": "^1.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.7.2",
     "css-loader": "^2.1.1",
+    "file-loader": "^4.2.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.4.0",
     "mini-css-extract-plugin": "^0.6.0",
-    "node-sass": "^4.12.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss": "^7.0.14",
+    "node-sass": "^4.13.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "^7.0.23",
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
     "sass-loader": "^8.0.0",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }
