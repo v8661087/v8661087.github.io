@@ -5,6 +5,7 @@ var modal03 = document.getElementById("myModal03");
 var modal04 = document.getElementById("myModal04");
 var modal05 = document.getElementById("myModal05");
 var modal06 = document.getElementById("myModal06");
+var modal07 = document.getElementById("myModal07");
 // Get the button that opens the modal
 var btn = document.getElementById("works01");
 var btn02 = document.getElementById("works02");
@@ -12,6 +13,7 @@ var btn03 = document.getElementById("works03");
 var btn04 = document.getElementById("works04");
 var btn05 = document.getElementById("works05");
 var btn06 = document.getElementById("works06");
+var btn07 = document.getElementById("works07");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("modal__close")[0];
 var span02 = document.getElementsByClassName("modal__close")[1];
@@ -19,6 +21,7 @@ var span03 = document.getElementsByClassName("modal__close")[2];
 var span04 = document.getElementsByClassName("modal__close")[3];
 var span05 = document.getElementsByClassName("modal__close")[4];
 var span06 = document.getElementsByClassName("modal__close")[5];
+var span07 = document.getElementsByClassName("modal__close")[6];
 // When the user clicks the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
@@ -44,6 +47,10 @@ btn06.onclick = function() {
   modal06.style.display = "block";
   $("body").css("overflow", "hidden");
 };
+btn07.onclick = function() {
+  modal07.style.display = "block";
+  $("body").css("overflow", "hidden");
+};
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
@@ -67,6 +74,10 @@ span05.onclick = function() {
 };
 span06.onclick = function() {
   modal06.style.display = "none";
+  $("body").css("overflow", "auto");
+};
+span07.onclick = function() {
+  modal07.style.display = "none";
   $("body").css("overflow", "auto");
 };
 // When the user clicks anywhere outside of the modal, close it
@@ -95,6 +106,10 @@ window.onclick = function(event) {
     modal06.style.display = "none";
     $("body").css("overflow", "auto");
   }
+  if (event.target == modal07) {
+    modal07.style.display = "none";
+    $("body").css("overflow", "auto");
+  }
 };
 
 $(document).on("keyup", function(event) {
@@ -105,6 +120,7 @@ $(document).on("keyup", function(event) {
     modal04.style.display = "none";
     modal05.style.display = "none";
     modal06.style.display = "none";
+    modal07.style.display = "none";
     $("body").css("overflow", "auto");
   }
 });
