@@ -13,19 +13,27 @@
       content="gc1LuAGfATpYVoVsUAkRIhtwE2mIyHkvDm5thk9piyA"
     />
     <title>郭奕良 Steven Kuo</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="images/kuo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="src/reset.css">
     <link rel="stylesheet" type="text/css" href="dist/index.bundle.css" />
-    <script src="dist/scroll.bundle.js"></script>
-    <script src="dist/modal.bundle.js" async></script>
   </head>
   <body>
+  <script>
+  if('serviceWorker' in navigator){
+    console.log("Will service worker register?");
+    navigator.serviceWorker.register('service-worker.js').then(function(reg){
+      console.log("Yes it did.");
+    }).catch(function(err){
+      console.log("No it didn't. This happend:",err)
+    })
+  }
+  </script>
     <div>
       <div class="menu">
         <div class="menu-logo">
@@ -44,7 +52,7 @@
         </div>
       </div>
       <!-- MENU -->
-      <div data-parallax="scroll" data-image-src="images/typewriter.jpg">
+      <div class="parallax">
         <div class="main" id="page1">
           <div class="main-content">
             <h1>KUO</h1>
@@ -62,6 +70,7 @@
           <p>Hi，歡迎來到我的個人網站</p>
           <p>我是郭奕良Steven Kuo</p>
           <p>自學程式一年，目前主要學習前端</p>
+          <p>持續努力精進自己，目標是成為前端工程師</p>
         </div>
       </div>
       <!--skill -->
@@ -76,9 +85,9 @@
                 class="skill-content-detail-image"
               />
               <p>HTML5、CSS3、RWD</p>
-              <p>Sass、Scss、PostCSS</p>
-              <p>JavaScript、jQuery、React</p>
-              <p>Vue</p>
+              <p>Sass、SCSS、PostCSS</p>
+              <p>JavaScript、jQuery</p>
+              <p>React、Vue</p>
             </li>
             <li>
               <img
@@ -86,6 +95,7 @@
                 class="skill-content-detail-image"
               />
               <p>Django、Python爬蟲、Firebase</p>
+              <p>Node.js、MongoDB Atlas、Heroku</p>
             </li>
             <li>
               <img src="images/TOOLS.jpg" class="skill-content-detail-image" />
@@ -102,55 +112,51 @@
           <div id="myBtn" class="works-content-items">
             <div class="works-content-items-item" id="works01">
               <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>部落格</p>
-                <p>Django</p>
-              </div>
-              <img
-                src="images/blog-1.jpg"
-                class="works-content-items-item-image"
-              />
-            </div>
-            <div class="works-content-items-item" id="works02">
-              <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>社群網站</p>
-                <p>Django</p>
-              </div>
-              <img
-                src="images/mate-1.jpg"
-                class="works-content-items-item-image"
-              />
-            </div>
-            <div class="works-content-items-item slider" id="works03">
-              <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>Works</p>
                 <p>React</p>
+                <p>Shopping-Cart</p>
+              </div>
+              <img
+                src="images/React-Shopping-Cart.jpg"
+                class="works-content-items-item-image"
+              />
+            </div>
+            <div class="works-content-items-item slider" id="works02">
+              <div class="works-content-items-item-title">
+                <p>React</p>
+                <p>Works</p>
               </div>
               <span>
-              <img
-                src="images/React-To-Do List.jpg"
-                class="works-content-items-item-image"
-              />
+                <img
+                  src="images/React-To-Do List.jpg"
+                  class="works-content-items-item-image"
+                />
               </span>
               <span>
-              <img
-                src="images/React-CommentApp.jpg"
-                class="works-content-items-item-image"
-              />
+                <img
+                  src="images/React-CommentApp.jpg"
+                  class="works-content-items-item-image"
+                />
               </span>
               <span>
+                <img
+                  src="images/React-WeatherApp.jpg"
+                  class="works-content-items-item-image"
+                />
+              </span>
+            </div>
+            <div class="works-content-items-item" id="works03">
+              <div class="works-content-items-item-title">
+                <p>Vue</p>
+                <p>E-commerce</p>
+              </div>
               <img
-                src="images/React-WeatherApp.jpg"
+                src="images/vue-ecommerce-1.jpg"
                 class="works-content-items-item-image"
               />
-              </span>
             </div>
             <div class="works-content-items-item" id="works04">
               <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>台北夜市</p>
+                <p>jQuery</p>
                 <p>Google Maps API</p>
               </div>
               <img
@@ -160,19 +166,7 @@
             </div>
             <div class="works-content-items-item" id="works05">
               <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>Shopping-Cart</p>
-                <p>React</p>
-              </div>
-              <img
-                src="images/React-Shopping-Cart.jpg"
-                class="works-content-items-item-image"
-              />
-            </div>
-            <div class="works-content-items-item" id="works06">
-              <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>Twitch LOL Streams</p>
+                <p>jQuery</p>
                 <p>Twitch API</p>
               </div>
               <img
@@ -180,14 +174,13 @@
                 class="works-content-items-item-image"
               />
             </div>
-            <div class="works-content-items-item" id="works07">
+            <div class="works-content-items-item" id="works06">
               <div class="works-content-items-item-title">
-                <h4>WEBSITE</h4>
-                <p>Ecommerce</p>
-                <p>Vue</p>
+                <p>Django</p>
+                <p>社群網站</p>
               </div>
               <img
-                src="images/vue-ecommerce-1.jpg"
+                src="images/mate-1.jpg"
                 class="works-content-items-item-image"
               />
             </div>
@@ -195,10 +188,11 @@
         </div>
       </div>
       <!-- contact -->
-      <div data-parallax="scroll" data-image-src="images/typewriter.jpg">
+      <div class="parallax">
         <div class="contact" id="page5">
           <div class="contact-content">
             <h1>CONTACT</h1>
+            <hr />
             <img src="images/photo.jpg" class="contact-content-photo" />
             <p>v8661087@gmail.com</p>
             <a href="https://github.com/v8661087" target="_blank"
@@ -208,48 +202,42 @@
         </div>
       </div>
     </div>
-    <div id="myModal" class="modal">
+
+    <div id="myModal01" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <h3>部落格</h3>
-        <h3>Django</h3>
+        <h3>React</h3>
+        <h3>Shopping-Cart</h3>
         <p>
           <a
-            href="https://kuoblog.herokuapp.com/"
+            href="https://v8661087.github.io/React-Shopping-Cart/"
             class="modal-content__check"
             target="_blank"
             >Demo</a
           >
         </p>
-        <img src="images/blog-1.jpg" class="modal-content-image" />
-        <img src="images/blog-2.jpg" class="modal-content-image" />
-        <img src="images/blog-3.jpg" class="modal-content-image" />
+        <span>React購物車</span><br />
+        <span
+          >Create React App建立開發環境，ES6 Class建立組件，React
+          Redux資料畫面分離，儲存購物車內商品資訊至localstorage，React
+          Router管理路由，內建Service Worker製作Progressive Web App。</span
+        >
+        <a
+          href="https://v8661087.github.io/React-Shopping-Cart/"
+          target="_blank"
+        >
+          <img
+            src="images/React-Shopping-Cart.gif"
+            class="modal-content-image"
+          />
+        </a>
       </div>
     </div>
     <div id="myModal02" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <h3>Mate社交網站</h3>
-        <h3>Django</h3>
-        <p>
-          <a
-            href="https://kuomate.herokuapp.com/kuo/"
-            class="modal-content__check"
-            target="_blank"
-            >Demo</a
-          >
-        </p>
-        <img src="images/mate-1.jpg" class="modal-content-image" />
-        <img src="images/mate-2.jpg" class="modal-content-image" />
-        <img src="images/mate-3.jpg" class="modal-content-image" />
-        <img src="images/mate-4.jpg" class="modal-content-image" />
-        <img src="images/mate-5.jpg" class="modal-content-image" />
-      </div>
-    </div>
-    <div id="myModal03" class="modal">
-      <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
-        <h3>React-Works</h3>
+        <h3>React</h3>
+        <h3>Works</h3>
         <p>
           <a
             href="https://v8661087.github.io/React-Works/"
@@ -258,7 +246,8 @@
             >Demo</a
           >
         </p>
-        <p>To-Do List</p>
+        <span>React Hooks建立組件</span><br />
+        <span>To-Do List</span>
         <a
           href="https://v8661087.github.io/React-Works/#/To-Do-List"
           target="_blank"
@@ -268,7 +257,10 @@
             class="modal-content-image"
             alt="React-To-Do List"
         /></a>
-        <p>留言板</p>
+        <span
+          >留言板：Firebase後台，會員認證系統(登入/註冊)，Cloud
+          Firestore即時資料庫。</span
+        >
         <a
           href="https://v8661087.github.io/React-Works/#/CommentApp"
           target="_blank"
@@ -279,7 +271,16 @@
             alt="React-CommentApp"
           />
         </a>
-        <p>目前天氣</p>
+        <span
+          >目前天氣：串接中央氣象局API取得天氣資訊，選擇城市及主題並儲存至localstorage。</span
+        ><br />
+        <span
+          >參考<a
+            href="https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1"
+            target="_blank"
+            >https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1</a
+          ></span
+        >
         <a
           href="https://v8661087.github.io/React-Works/#/WeatherApp"
           target="_blank"
@@ -292,10 +293,38 @@
         </a>
       </div>
     </div>
+    <div id="myModal03" class="modal">
+      <div class="modal-content">
+        <span id="close" class="modal__close">&times;</span>
+        <h3>Vue</h3>
+        <h3>E-commerce</h3>
+        <p>
+          <a
+            href="https://v8661087.github.io/Vue-Ecommerce/"
+            class="modal-content__check"
+            target="_blank"
+            >Demo</a
+          >
+        </p>
+        <span>Vue電商網站</span><br />
+        <span
+          >Vue CLI 3建立開發環境，Vuex儲存狀態容器，串接由Node.js Express
+          MongoDB Atlas Heroku建立之RESTful API取得資料，Vue
+          Router管理路由，localStorage儲存購物車資訊，內建Service
+          Worker製作Progressive Web App。</span
+        >
+        <a href="https://v8661087.github.io/Vue-Ecommerce/" target="_blank">
+          <img src="images/vue-ecommerce-1.jpg" class="modal-content-image" />
+        </a>
+        <a href="https://v8661087.github.io/Vue-Ecommerce/" target="_blank">
+          <img src="images/vue-ecommerce-2.jpg" class="modal-content-image" />
+        </a>
+      </div>
+    </div>
     <div id="myModal04" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <h3>台北夜市</h3>
+        <h3>jQuery</h3>
         <h3>Google Maps API</h3>
         <p>
           <a
@@ -305,51 +334,61 @@
             >Demo</a
           >
         </p>
-        <img src="images/night-1.jpg" class="modal-content-image" />
-        <img src="images/night-2.jpg" class="modal-content-image" />
+        <span>台北夜市</span><br />
+        <span>串接台北市資料大平臺夜市專區攤商資訊API，Google Maps API。</span>
+        <a href="TaipeiNightMarket.html" target="_blank">
+          <img src="images/night-1.jpg" class="modal-content-image" />
+        </a>
+        <span>點擊地圖標示或選擇上方夜市名稱放大地圖並取得夜市資訊</span>
+        <a href="TaipeiNightMarket.html" target="_blank">
+          <img src="images/night-2.jpg" class="modal-content-image" />
+        </a>
       </div>
     </div>
     <div id="myModal05" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <h3>React-Shopping-Cart</h3>
-        <p>
-          <a
-            href="https://v8661087.github.io/React-Shopping-Cart/"
-            class="modal-content__check"
-            target="_blank"
-            >Demo</a
-          >
-        </p>
-        <img src="images/React-Shopping-Cart.gif" class="modal-content-image" />
-      </div>
-    </div>
-    <div id="myModal06" class="modal">
-      <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
-        <h3>Twitch LOL Streams</h3>
+        <h3>jQuery</h3>
         <h3>Twitch API</h3>
         <p>
           <a href="TwitchApi.html" class="modal-content__check" target="_blank"
             >Demo</a
           >
         </p>
-        <img src="images/TwitchApi.jpg" class="modal-content-image" />
+        <span>Twitch League of Legends Live Streams</span><br />
+        <span>點擊上方按鈕進行中英文頻道切換</span>
+        <a href="TwitchApi.html" target="_blank">
+          <img src="images/TwitchApi.jpg" class="modal-content-image" />
+        </a>
       </div>
     </div>
-    <div id="myModal07" class="modal">
+    <div id="myModal06" class="modal">
       <div class="modal-content">
         <span id="close" class="modal__close">&times;</span>
-        <h3>Ecommerce</h3>
-        <h3>Vue</h3>
+        <h3>Django</h3>
+        <h3>社群網站</h3>
         <p>
-          <a href="https://v8661087.github.io/Vue-Ecommerce/#/" class="modal-content__check" target="_blank"
+          <a
+            href="https://kuomate.herokuapp.com/kuo/"
+            class="modal-content__check"
+            target="_blank"
             >Demo</a
           >
         </p>
-        <img src="images/vue-ecommerce-1.jpg" class="modal-content-image" />
-        <img src="images/vue-ecommerce-2.jpg" class="modal-content-image" />
+        <span>會員登入</span>
+        <img src="images/mate-1.jpg" class="modal-content-image" />
+        <span>會員註冊</span>
+        <img src="images/mate-2.jpg" class="modal-content-image" />
+        <span>編輯個人檔案/變更密碼、新增相片</span>
+        <img src="images/mate-3.jpg" class="modal-content-image" />
+        <span>顯示最新動態</span>
+        <img src="images/mate-4.jpg" class="modal-content-image" />
+        <span>按讚、留言、留言按讚、珍藏貼文</span>
+        <img src="images/mate-5.jpg" class="modal-content-image" />
       </div>
     </div>
+    <script src="dist/smooth_scroll.bundle.js"></script>
+    <script src="dist/scroll.bundle.js"></script>
+    <script src="dist/modal.bundle.js"></script>
   </body>
 </html>

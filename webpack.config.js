@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     index: ["./index.scss"],
     modal: ["./modal.js"],
-    scroll: ["./scroll.js"]
+    scroll: ["./scroll.js"],
+    smooth_scroll:["./smooth_scroll.js"]
   },
   output: {
     filename: "[name].bundle.js",
@@ -28,20 +29,27 @@ module.exports = {
           "postcss-loader",
           "sass-loader"
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|jpe?g|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              publicPath: "./img",
+              outputPath: "./img"
+            }
+          },
+          //圖片壓縮
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true
+            }
+          }
+        ]
       }
-      /*{
-      test: /\.(png|jpg|gif|jpe?g|svg)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            publicPath: './img',
-            outputPath: './img'
-          }  
-        }
-      ]
-}*/
     ]
   }
 };
