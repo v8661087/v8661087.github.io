@@ -6,6 +6,7 @@ const FILES_TO_CACHE = [
   "/",
   "/index.html",
   "dist/img/typewriter.jpg",
+  "images/icons/icon-144x144.png",
   "images/kuo.png",
   "images/FRONTEND.jpg",
   "images/BACKEND.jpg",
@@ -34,7 +35,8 @@ const FILES_TO_CACHE = [
   "dist/index.bundle.css",
   "dist/modal.bundle.js",
   "dist/scroll.bundle.js",
-  "dist/smooth_scroll.bundle.js"
+  "dist/smooth_scroll.bundle.js",
+  "manifest.json"
 ];
 self.addEventListener("install", evt => {
   console.log("[ServiceWorker] Install");
@@ -69,7 +71,7 @@ self.addEventListener("activate", evt => {
 self.addEventListener("fetch", evt => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
   // CODELAB: Add fetch event handler here.
-  if (evt.request.url.includes('/forecast/')) {
+ /* if (evt.request.url.includes('/forecast/')) {
     console.log('[Service Worker] Fetch (data)', evt.request.url);
     evt.respondWith(
         caches.open(DATA_CACHE_NAME).then((cache) => {
@@ -86,7 +88,7 @@ self.addEventListener("fetch", evt => {
               });
         }));
     return;
-  }
+  }*/
   evt.respondWith(
       caches.open(CACHE_NAME).then((cache) => {
         return cache.match(evt.request)

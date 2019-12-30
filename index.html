@@ -13,27 +13,38 @@
       content="gc1LuAGfATpYVoVsUAkRIhtwE2mIyHkvDm5thk9piyA"
     />
     <title>郭奕良 Steven Kuo</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" href="images/kuo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="src/reset.css">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="src/reset.css" />
     <link rel="stylesheet" type="text/css" href="dist/index.bundle.css" />
+    <script src="dist/index.bundle.js" async></script>
+    <script src="dist/smooth_scroll.bundle.js" async></script>
+    <script src="dist/scroll.bundle.js" async></script>
+    <script src="dist/modal.bundle.js" async></script>
   </head>
   <body>
-  <script>
-  if('serviceWorker' in navigator){
-    console.log("Will service worker register?");
-    navigator.serviceWorker.register('service-worker.js').then(function(reg){
-      console.log("Yes it did.");
-    }).catch(function(err){
-      console.log("No it didn't. This happend:",err)
-    })
-  }
-  </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        console.log("Will service worker register?");
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(function(reg) {
+            console.log("Yes it did.");
+          })
+          .catch(function(err) {
+            console.log("No it didn't. This happend:", err);
+          });
+      }
+    </script>
     <div>
       <div class="menu">
         <div class="menu-logo">
@@ -83,6 +94,7 @@
               <img
                 src="images/FRONTEND.jpg"
                 class="skill-content-detail-image"
+                alt="frontend"
               />
               <p>HTML5、CSS3、RWD</p>
               <p>Sass、SCSS、PostCSS</p>
@@ -93,12 +105,17 @@
               <img
                 src="images/BACKEND.jpg"
                 class="skill-content-detail-image"
+                alt="backend"
               />
               <p>Django、Python爬蟲、Firebase</p>
               <p>Node.js、MongoDB Atlas、Heroku</p>
             </li>
             <li>
-              <img src="images/TOOLS.jpg" class="skill-content-detail-image" />
+              <img
+                src="images/TOOLS.jpg"
+                class="skill-content-detail-image"
+                alt="tools"
+              />
               <p>VSCode、NPM、Yarn、Git<br />Gulp, Webpack</p>
             </li>
           </ul>
@@ -118,6 +135,7 @@
               <img
                 src="images/React-Shopping-Cart.jpg"
                 class="works-content-items-item-image"
+                alt="react-shopping-cart"
               />
             </div>
             <div class="works-content-items-item slider" id="works02">
@@ -129,18 +147,21 @@
                 <img
                   src="images/React-To-Do List.jpg"
                   class="works-content-items-item-image"
+                  alt="react-to-do-list"
                 />
               </span>
               <span>
                 <img
                   src="images/React-CommentApp.jpg"
                   class="works-content-items-item-image"
+                  alt="react-commentapp"
                 />
               </span>
               <span>
                 <img
                   src="images/React-WeatherApp.jpg"
                   class="works-content-items-item-image"
+                  alt="react-weatherapp"
                 />
               </span>
             </div>
@@ -152,6 +173,7 @@
               <img
                 src="images/vue-ecommerce-1.jpg"
                 class="works-content-items-item-image"
+                alt="vue-ecommerce"
               />
             </div>
             <div class="works-content-items-item" id="works04">
@@ -162,6 +184,7 @@
               <img
                 src="images/night-1.jpg"
                 class="works-content-items-item-image"
+                alt="nightmarket"
               />
             </div>
             <div class="works-content-items-item" id="works05">
@@ -172,6 +195,7 @@
               <img
                 src="images/TwitchApi.jpg"
                 class="works-content-items-item-image"
+                alt="twitchapi"
               />
             </div>
             <div class="works-content-items-item" id="works06">
@@ -182,6 +206,7 @@
               <img
                 src="images/mate-1.jpg"
                 class="works-content-items-item-image"
+                alt="django-mate"
               />
             </div>
           </div>
@@ -193,11 +218,23 @@
           <div class="contact-content">
             <h1>CONTACT</h1>
             <hr />
-            <img src="images/photo.jpg" class="contact-content-photo" />
+            <img
+              src="images/photo.jpg"
+              class="contact-content-photo"
+              alt="photo"
+            />
             <p>v8661087@gmail.com</p>
-            <a href="https://github.com/v8661087" target="_blank"
-              ><img src="images/github.png" class="contact-content-github-image"
-            /></a>
+            <a
+              href="https://github.com/v8661087"
+              rel="noopener"
+              target="_blank"
+            >
+              <img
+                src="images/github.png"
+                class="contact-content-github-image"
+                alt="github"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -213,6 +250,7 @@
             href="https://v8661087.github.io/React-Shopping-Cart/"
             class="modal-content__check"
             target="_blank"
+            rel="noopener"
             >Demo</a
           >
         </p>
@@ -225,10 +263,12 @@
         <a
           href="https://v8661087.github.io/React-Shopping-Cart/"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="images/React-Shopping-Cart.gif"
             class="modal-content-image"
+            alt="react-shopping-cart"
           />
         </a>
       </div>
@@ -243,6 +283,7 @@
             href="https://v8661087.github.io/React-Works/"
             class="modal-content__check"
             target="_blank"
+            rel="noopener"
             >Demo</a
           >
         </p>
@@ -251,6 +292,7 @@
         <a
           href="https://v8661087.github.io/React-Works/#/To-Do-List"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="images/React-To-Do List.gif"
@@ -264,6 +306,7 @@
         <a
           href="https://v8661087.github.io/React-Works/#/CommentApp"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="images/React-CommentApp.gif"
@@ -278,12 +321,14 @@
           >參考<a
             href="https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1"
             target="_blank"
+            rel="noopener"
             >https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1</a
           ></span
         >
         <a
           href="https://v8661087.github.io/React-Works/#/WeatherApp"
           target="_blank"
+          rel="noopener"
         >
           <img
             src="images/React-WeatherApp.gif"
@@ -303,6 +348,7 @@
             href="https://v8661087.github.io/Vue-Ecommerce/"
             class="modal-content__check"
             target="_blank"
+            rel="noopener"
             >Demo</a
           >
         </p>
@@ -313,11 +359,27 @@
           Router管理路由，localStorage儲存購物車資訊，內建Service
           Worker製作Progressive Web App。</span
         >
-        <a href="https://v8661087.github.io/Vue-Ecommerce/" target="_blank">
-          <img src="images/vue-ecommerce-1.jpg" class="modal-content-image" />
+        <a
+          href="https://v8661087.github.io/Vue-Ecommerce/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="images/vue-ecommerce-1.jpg"
+            class="modal-content-image"
+            alt="vue-ecommerce"
+          />
         </a>
-        <a href="https://v8661087.github.io/Vue-Ecommerce/" target="_blank">
-          <img src="images/vue-ecommerce-2.jpg" class="modal-content-image" />
+        <a
+          href="https://v8661087.github.io/Vue-Ecommerce/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="images/vue-ecommerce-2.jpg"
+            class="modal-content-image"
+            alt="vue-ecommerce"
+          />
         </a>
       </div>
     </div>
@@ -331,17 +393,26 @@
             href="TaipeiNightMarket.html"
             class="modal-content__check"
             target="_blank"
+            rel="noopener"
             >Demo</a
           >
         </p>
         <span>台北夜市</span><br />
         <span>串接台北市資料大平臺夜市專區攤商資訊API，Google Maps API。</span>
-        <a href="TaipeiNightMarket.html" target="_blank">
-          <img src="images/night-1.jpg" class="modal-content-image" />
+        <a href="TaipeiNightMarket.html" target="_blank" rel="noopener">
+          <img
+            src="images/night-1.jpg"
+            class="modal-content-image"
+            alt="nightmarket"
+          />
         </a>
         <span>點擊地圖標示或選擇上方夜市名稱放大地圖並取得夜市資訊</span>
-        <a href="TaipeiNightMarket.html" target="_blank">
-          <img src="images/night-2.jpg" class="modal-content-image" />
+        <a href="TaipeiNightMarket.html" target="_blank" rel="noopener">
+          <img
+            src="images/night-2.jpg"
+            class="modal-content-image"
+            alt="nightmarket"
+          />
         </a>
       </div>
     </div>
@@ -351,14 +422,22 @@
         <h3>jQuery</h3>
         <h3>Twitch API</h3>
         <p>
-          <a href="TwitchApi.html" class="modal-content__check" target="_blank"
+          <a
+            href="TwitchApi.html"
+            class="modal-content__check"
+            target="_blank"
+            rel="noopener"
             >Demo</a
           >
         </p>
         <span>Twitch League of Legends Live Streams</span><br />
         <span>點擊上方按鈕進行中英文頻道切換</span>
-        <a href="TwitchApi.html" target="_blank">
-          <img src="images/TwitchApi.jpg" class="modal-content-image" />
+        <a href="TwitchApi.html" target="_blank" rel="noopener">
+          <img
+            src="images/TwitchApi.jpg"
+            class="modal-content-image"
+            alt="twitchapi"
+          />
         </a>
       </div>
     </div>
@@ -372,23 +451,41 @@
             href="https://kuomate.herokuapp.com/kuo/"
             class="modal-content__check"
             target="_blank"
+            rel="noopener"
             >Demo</a
           >
         </p>
         <span>會員登入</span>
-        <img src="images/mate-1.jpg" class="modal-content-image" />
+        <img
+          src="images/mate-1.jpg"
+          class="modal-content-image"
+          alt="django-mate"
+        />
         <span>會員註冊</span>
-        <img src="images/mate-2.jpg" class="modal-content-image" />
+        <img
+          src="images/mate-2.jpg"
+          class="modal-content-image"
+          alt="django-mate"
+        />
         <span>編輯個人檔案/變更密碼、新增相片</span>
-        <img src="images/mate-3.jpg" class="modal-content-image" />
+        <img
+          src="images/mate-3.jpg"
+          class="modal-content-image"
+          alt="django-mate"
+        />
         <span>顯示最新動態</span>
-        <img src="images/mate-4.jpg" class="modal-content-image" />
+        <img
+          src="images/mate-4.jpg"
+          class="modal-content-image"
+          alt="django-mate"
+        />
         <span>按讚、留言、留言按讚、珍藏貼文</span>
-        <img src="images/mate-5.jpg" class="modal-content-image" />
+        <img
+          src="images/mate-5.jpg"
+          class="modal-content-image"
+          alt="django-mate"
+        />
       </div>
     </div>
-    <script src="dist/smooth_scroll.bundle.js"></script>
-    <script src="dist/scroll.bundle.js"></script>
-    <script src="dist/modal.bundle.js"></script>
   </body>
 </html>
