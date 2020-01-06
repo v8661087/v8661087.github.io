@@ -41,8 +41,12 @@ h2 {
   &-logo {
     padding: 12px 0px 15px 30px;
     width: 100%;
+    > a{
+      display: flex;
+      width: 120px;
+      align-items: center;
+    }
     img {
-      float: left;
       width: 30px;
       margin-right: 10px;
     }
@@ -211,6 +215,7 @@ hr {
     z-index: 2;
     h3 {
       text-align: center;
+      font-size: 21px;
     }
     p {
       margin: 9px 0;
@@ -218,6 +223,8 @@ hr {
     }
     span {
       text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 21px;
     }
     &__check {
       padding: 6px 15px;
@@ -233,6 +240,9 @@ hr {
     }
   }
   &__close {
+    background-color: $black;
+    border:none;
+    outline: none;
     position: absolute;
     color: $gray;
     top: 9px;
@@ -287,4 +297,15 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.resume{
+  margin-top: 15px;
+  a{
+    background-color: $black;
+  padding: 9px 15px;
+  border-radius: 300px;
+  letter-spacing: 2px;
+  font-family: Tahoma;
+  font-size: 18px;
+  }
 }

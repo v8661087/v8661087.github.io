@@ -12,8 +12,10 @@
       name="google-site-verification"
       content="gc1LuAGfATpYVoVsUAkRIhtwE2mIyHkvDm5thk9piyA"
     />
+    <meta name="theme-color" content="#317EFB" />
     <title>郭奕良 Steven Kuo</title>
     <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
     <link rel="shortcut icon" href="images/kuo.png" />
     <link
       rel="stylesheet"
@@ -30,22 +32,14 @@
     <script src="dist/smooth_scroll.bundle.js" async></script>
     <script src="dist/scroll.bundle.js" async></script>
     <script src="dist/modal.bundle.js" async></script>
+    <script
+      src="https://kit.fontawesome.com/86f23d9905.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <script>
-      if ("serviceWorker" in navigator) {
-        console.log("Will service worker register?");
-        navigator.serviceWorker
-          .register("service-worker.js")
-          .then(function(reg) {
-            console.log("Yes it did.");
-          })
-          .catch(function(err) {
-            console.log("No it didn't. This happend:", err);
-          });
-      }
-    </script>
     <div>
+      <!-- MENU -->
       <div class="menu">
         <div class="menu-logo">
           <a href="#page1">
@@ -62,7 +56,7 @@
           </ul>
         </div>
       </div>
-      <!-- MENU -->
+      <!-- MAIN -->
       <div class="parallax">
         <div class="main" id="page1">
           <div class="main-content">
@@ -79,9 +73,16 @@
           <h1>ABOUT</h1>
           <hr />
           <p>Hi，歡迎來到我的個人網站</p>
-          <p>我是郭奕良Steven Kuo</p>
-          <p>自學程式一年，目前主要學習前端</p>
-          <p>持續努力精進自己，目標是成為前端工程師</p>
+          <p>我是郭奕良 Steven Kuo</p>
+          <p>具有一年 JavaScript、前端使用經驗</p>
+          <div class="resume">
+            <a
+              href="https://www.cakeresume.com/s--OvsRmfPCgP8HsvO8kxqpwA--/v8661087"
+              rel="noopener"
+              target="_blank"
+              >resume <i class="far fa-file"></i
+            ></a>
+          </div>
         </div>
       </div>
       <!--skill -->
@@ -98,7 +99,7 @@
               />
               <p>HTML5、CSS3、RWD</p>
               <p>Sass、SCSS、PostCSS</p>
-              <p>JavaScript、jQuery</p>
+              <p>JavaScript、ES6、jQuery</p>
               <p>React、Vue</p>
             </li>
             <li>
@@ -107,8 +108,9 @@
                 class="skill-content-detail-image"
                 alt="backend"
               />
-              <p>Django、Python爬蟲、Firebase</p>
+              <p>Django、Python爬蟲、自動化</p>
               <p>Node.js、MongoDB Atlas、Heroku</p>
+              <p>Firebase</p>
             </li>
             <li>
               <img
@@ -116,7 +118,7 @@
                 class="skill-content-detail-image"
                 alt="tools"
               />
-              <p>VSCode、NPM、Yarn、Git<br />Gulp, Webpack</p>
+              <p>VS Code、NPM、Yarn、Git<br />Gulp, Webpack</p>
             </li>
           </ul>
         </div>
@@ -242,7 +244,7 @@
 
     <div id="myModal01" class="modal">
       <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
+        <button class="modal__close">&times;</button>
         <h3>React</h3>
         <h3>Shopping-Cart</h3>
         <p>
@@ -275,7 +277,7 @@
     </div>
     <div id="myModal02" class="modal">
       <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
+        <button class="modal__close">&times;</button>
         <h3>React</h3>
         <h3>Works</h3>
         <p>
@@ -317,14 +319,6 @@
         <span
           >目前天氣：串接中央氣象局API取得天氣資訊，選擇城市及主題並儲存至localstorage。</span
         ><br />
-        <span
-          >參考<a
-            href="https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1"
-            target="_blank"
-            rel="noopener"
-            >https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1</a
-          ></span
-        >
         <a
           href="https://v8661087.github.io/React-Works/#/WeatherApp"
           target="_blank"
@@ -340,7 +334,7 @@
     </div>
     <div id="myModal03" class="modal">
       <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
+        <button class="modal__close">&times;</button>
         <h3>Vue</h3>
         <h3>E-commerce</h3>
         <p>
@@ -385,7 +379,7 @@
     </div>
     <div id="myModal04" class="modal">
       <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
+        <button class="modal__close">&times;</button>
         <h3>jQuery</h3>
         <h3>Google Maps API</h3>
         <p>
@@ -418,7 +412,7 @@
     </div>
     <div id="myModal05" class="modal">
       <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
+        <button class="modal__close">&times;</button>
         <h3>jQuery</h3>
         <h3>Twitch API</h3>
         <p>
@@ -443,7 +437,7 @@
     </div>
     <div id="myModal06" class="modal">
       <div class="modal-content">
-        <span id="close" class="modal__close">&times;</span>
+        <button class="modal__close">&times;</button>
         <h3>Django</h3>
         <h3>社群網站</h3>
         <p>
@@ -487,5 +481,18 @@
         />
       </div>
     </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        console.log("Will service worker register?");
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(function(reg) {
+            console.log("Yes it did.");
+          })
+          .catch(function(err) {
+            console.log("No it didn't. This happend:", err);
+          });
+      }
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@ function GetMarket() {
       "https://data.taipei/api/getDatasetInfo/downloadResource?id=8a569b5b-0cb1-4c7f-a064-780b3301354c&rid=9744ea1c-aafb-471c-8bb8-04f398ad415a",
     dataType: "json"
   }).done(function(info) {
-    for (i = 0; i < 15; i++) {
+    for (i = 0; i < info.length; i++) {
       if (info[i].夜市名稱 === $("#mySelect").val()) {
         if (info[i].交通資訊 !== null) {
           $("#NightMarket").append(
@@ -36,7 +36,7 @@ function GetFood() {
       "https://data.taipei/api/getDatasetInfo/downloadResource?id=8a569b5b-0cb1-4c7f-a064-780b3301354c&rid=da4a214f-0c3d-437e-9312-34e5671db2a8",
     dataType: "json"
   }).done(function(msg) {
-    for (i = 0; i < 965; i++) {
+    for (i = 0; i < msg.length; i++) {
       if (msg[i].夜市名稱 === $("#mySelect").val()) {
         $("#listContent").append(
           `<div class='listEach'>

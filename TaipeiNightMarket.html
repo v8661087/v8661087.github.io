@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <link rel="stylesheet" href="./src/Taipei/Taipei.css" />
-        <title>台北夜市查詢</title>
-        <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
-        <script
-            async
-            defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap"
-        ></script>
-        <script src="./src/Taipei/GoogleMaps.js" async defer></script>
-        <script src="./src/Taipei/Night.js" async defer></script>
-    </head>
-    <body>
-        <header id="header">
-            <h1>台北夜市</h1>
-            <a id="choice">請選擇夜市名稱:</a>
-            <select id="mySelect">
-                <option value="請選擇">請選擇</option>
-                <option value="大龍街夜市">大龍街夜市</option>
-                <option value="廣州街觀光夜市">廣州街觀光夜市</option>
-                <option value="華西街觀光夜市">華西街觀光夜市</option>
-                <option value="景美夜市">景美夜市</option>
-                <option value="臨江街觀光夜市">臨江街觀光夜市</option>
-                <option value="遼寧街夜市">遼寧街夜市</option>
-                <option value="南機場夜市">南機場夜市</option>
-                <option value="寧夏觀光夜市">寧夏觀光夜市</option>
-                <option value="饒河街觀光夜市">饒河街觀光夜市</option>
-                <option value="雙城街夜市">雙城街夜市</option>
-                <option value="士林觀光夜市">士林觀光夜市</option>
-                <option value="梧州街觀光夜市">梧州街觀光夜市</option>
-                <option value="西昌街觀光夜市">西昌街觀光夜市</option>
-                <option value="延三觀光夜市">延三觀光夜市</option>
-                <option value="梧州街觀光夜市">梧州街觀光夜市</option>
-            </select>
-        </header>
-        <div class="article">
-            <div id="map"></div>
-            <div class="list">
-                <div id="NightMarket"></div>
-                <div class="listTitle">
-                    <div class="name">攤位名稱</div>
-                    <div class="food">特色美食</div>
-                </div>
-                <div id="listContent"></div>
-            </div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./src/Taipei/Taipei.css" />
+    <title>台北夜市查詢</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+    <script src="./src/Taipei/Night.js" async></script>
+    <script src="./src/Taipei/GoogleMaps.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1>台北夜市</h1>
+      <a id="choice">請選擇夜市名稱:</a>
+      <select id="mySelect">
+        <option value="請選擇">請選擇</option>
+        <option value="大龍街夜市">大龍街夜市</option>
+        <option value="廣州街觀光夜市">廣州街觀光夜市</option>
+        <option value="華西街觀光夜市">華西街觀光夜市</option>
+        <option value="景美夜市">景美夜市</option>
+        <option value="臨江街觀光夜市">臨江街觀光夜市</option>
+        <option value="遼寧街夜市">遼寧街夜市</option>
+        <option value="南機場夜市">南機場夜市</option>
+        <option value="寧夏觀光夜市">寧夏觀光夜市</option>
+        <option value="饒河街觀光夜市">饒河街觀光夜市</option>
+        <option value="雙城街夜市">雙城街夜市</option>
+        <option value="士林觀光夜市">士林觀光夜市</option>
+        <option value="梧州街觀光夜市">梧州街觀光夜市</option>
+        <option value="西昌街觀光夜市">西昌街觀光夜市</option>
+        <option value="延三觀光夜市">延三觀光夜市</option>
+        <option value="梧州街觀光夜市">梧州街觀光夜市</option>
+      </select>
+    </header>
+    <div class="article">
+      <div id="map"></div>
+      <div class="list">
+        <div id="NightMarket"></div>
+        <div class="listTitle">
+          <div class="name">攤位名稱</div>
+          <div class="food">特色美食</div>
         </div>
+        <div id="listContent"></div>
+      </div>
+    </div>
 
-        <a href="#header" id="myBtn" title="Go to top">↑</a>
-        <script>
-            // When the user scrolls down 100px from the top of the document, show the button
-            window.onscroll = function() {
-                scrollFunction();
-            };
-            function scrollFunction() {
-                if (
-                    document.body.scrollTop > 100 ||
-                    document.documentElement.scrollTop > 100
-                ) {
-                    $("#myBtn").css("display", "block");
-                } else {
-                    $("#myBtn").css("display", "none");
-                }
-            }
-        </script>
-    </body>
+    <a href="#header" id="myBtn" title="Go to top">↑</a>
+    <script>
+      // When the user scrolls down 100px from the top of the document, show the button
+      window.onscroll = function() {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          $("#myBtn").css("display", "block");
+        } else {
+          $("#myBtn").css("display", "none");
+        }
+      }
+    </script>
+  </body>
 </html>
