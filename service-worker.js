@@ -20,7 +20,6 @@ const FILES_TO_CACHE = [
   "images/React-WeatherApp.jpg",
   "images/React-WeatherApp.gif",
   "images/vue-ecommerce-1.jpg",
-  "images/vue-ecommerce-2.jpg",
   "images/night-1.jpg",
   "images/night-2.jpg",
   "images/TwitchApi.jpg",
