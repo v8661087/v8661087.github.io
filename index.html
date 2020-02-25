@@ -36,19 +36,22 @@
       crossorigin="anonymous"
     ></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155999237-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-155999237-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-155999237-1');
-</script>
-
+      gtag("config", "UA-155999237-1");
+    </script>
   </head>
   <body>
     <div>
-      <!-- MENU -->
       <div class="menu">
         <div class="menu-logo">
           <a href="#page1">
@@ -65,7 +68,6 @@
           </ul>
         </div>
       </div>
-      <!-- MAIN -->
       <div class="parallax">
         <div class="main" id="page1">
           <div class="main-content">
@@ -76,7 +78,6 @@
           </div>
         </div>
       </div>
-      <!-- about -->
       <div class="about" id="page2">
         <div class="about-content">
           <h1>ABOUT</h1>
@@ -94,7 +95,6 @@
           </div>
         </div>
       </div>
-      <!--skill -->
       <div class="skill" id="page3">
         <div class="skill-content">
           <h1>SKILL</h1>
@@ -109,7 +109,7 @@
               <p>HTML5、CSS3、RWD</p>
               <p>Sass、SCSS、PostCSS</p>
               <p>JavaScript、ES6、jQuery</p>
-              <p>React、Vue</p>
+              <p>Vue、React</p>
             </li>
             <li>
               <img
@@ -132,13 +132,23 @@
           </ul>
         </div>
       </div>
-      <!-- works -->
       <div class="works" id="page4">
         <div class="works-content">
           <h1>WORKS</h1>
           <hr />
           <div id="myBtn" class="works-content-items">
             <div class="works-content-items-item" id="works01">
+              <div class="works-content-items-item-title">
+                <p>Vue</p>
+                <p>E-commerce</p>
+              </div>
+              <img
+                src="images/vue-ecommerce-1.jpg"
+                class="works-content-items-item-image"
+                alt="vue-ecommerce"
+              />
+            </div>
+            <div class="works-content-items-item" id="works02">
               <div class="works-content-items-item-title">
                 <p>React</p>
                 <p>Shopping-Cart</p>
@@ -149,7 +159,7 @@
                 alt="react-shopping-cart"
               />
             </div>
-            <div class="works-content-items-item slider" id="works02">
+            <div class="works-content-items-item slider" id="works03">
               <div class="works-content-items-item-title">
                 <p>React</p>
                 <p>Works</p>
@@ -176,17 +186,7 @@
                 />
               </span>
             </div>
-            <div class="works-content-items-item" id="works03">
-              <div class="works-content-items-item-title">
-                <p>Vue</p>
-                <p>E-commerce</p>
-              </div>
-              <img
-                src="images/vue-ecommerce-1.jpg"
-                class="works-content-items-item-image"
-                alt="vue-ecommerce"
-              />
-            </div>
+
             <div class="works-content-items-item" id="works04">
               <div class="works-content-items-item-title">
                 <p>jQuery</p>
@@ -223,7 +223,6 @@
           </div>
         </div>
       </div>
-      <!-- contact -->
       <div class="parallax">
         <div class="contact" id="page5">
           <div class="contact-content">
@@ -250,8 +249,41 @@
         </div>
       </div>
     </div>
-
     <div id="myModal01" class="modal">
+      <div class="modal-content">
+        <button class="modal__close">&times;</button>
+        <h3>Vue</h3>
+        <h3>E-commerce</h3>
+        <p>
+          <a
+            href="https://v8661087.github.io/Vue-Ecommerce/"
+            class="modal-content__check"
+            target="_blank"
+            rel="noopener"
+            >Demo</a
+          >
+        </p>
+        <span>Vue電商網站</span><br />
+        <span
+          >Vue CLI 4建立開發環境，Vuex儲存狀態容器，串接由Node.js Express
+          MongoDB Atlas Heroku建立之RESTful API取得資料，Vue
+          Router管理路由，localStorage儲存購物車資訊，內建Service
+          Worker製作Progressive Web App。</span
+        >
+        <a
+          href="https://v8661087.github.io/Vue-Ecommerce/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="images/vue-ecommerce-1.jpg"
+            class="modal-content-image"
+            alt="vue-ecommerce"
+          />
+        </a>
+      </div>
+    </div>
+    <div id="myModal02" class="modal">
       <div class="modal-content">
         <button class="modal__close">&times;</button>
         <h3>React</h3>
@@ -284,7 +316,7 @@
         </a>
       </div>
     </div>
-    <div id="myModal02" class="modal">
+    <div id="myModal03" class="modal">
       <div class="modal-content">
         <button class="modal__close">&times;</button>
         <h3>React</h3>
@@ -341,7 +373,7 @@
         </a>
       </div>
     </div>
-    <div id="myModal03" class="modal">
+    <div id="myModal01" class="modal">
       <div class="modal-content">
         <button class="modal__close">&times;</button>
         <h3>Vue</h3>

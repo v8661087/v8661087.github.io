@@ -1,23 +1,32 @@
-var path = require("path");
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//var HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack')
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
     index: ["./index.scss"],
     modal: ["./modal.js"],
     scroll: ["./scroll.js"],
-    smooth_scroll:["./smooth_scroll.js"]
+    smooth_scroll: ["./smooth_scroll.js"]
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist")
   },
-  mode: "production",
+  mode: "development",
   plugins: [
     new MiniCssExtractPlugin({
       filename: "./[name].bundle.css"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
+    /*new HtmlWebpackPlugin({
+      template: "../index.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace:true
+      }
+    })*/
   ],
   module: {
     rules: [
@@ -51,5 +60,10 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  devtool: 'inline-source-map',
+  devServer:{
+    contentBase:'./dist',
+    hot:true
+},
 };
