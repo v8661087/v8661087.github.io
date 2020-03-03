@@ -1,32 +1,26 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-//var HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require('webpack')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require("webpack");
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
     index: ["./index.scss"],
     modal: ["./modal.js"],
     scroll: ["./scroll.js"],
-    smooth_scroll: ["./smooth_scroll.js"]
+    smooth_scroll: ["./smooth_scroll.js"],
+    TwitchApi:["./Twitch/TwitchApi.js"]
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist")
   },
-  mode: "development",
+  mode: "production",
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "./[name].bundle.css"
-    }),
-    new webpack.HotModuleReplacementPlugin()
-    /*new HtmlWebpackPlugin({
-      template: "../index.html",
-      minify: {
-        removeComments: true,
-        collapseWhitespace:true
-      }
-    })*/
+    })
   ],
   module: {
     rules: [
@@ -58,12 +52,17 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(js)$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
       }
     ]
   },
-  devtool: 'inline-source-map',
-  devServer:{
-    contentBase:'./dist',
-    hot:true
-},
 };

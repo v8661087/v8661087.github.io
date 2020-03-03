@@ -26,7 +26,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" type="text/css" href="src/reset.css" />
+    <link rel="stylesheet" type="text/css" href="src/normalize.css" />
     <link rel="stylesheet" type="text/css" href="dist/index.bundle.css" />
     <script src="dist/smooth_scroll.bundle.js" defer></script>
     <script src="dist/scroll.bundle.js" defer></script>
@@ -54,22 +54,22 @@
     <div>
       <div class="menu">
         <div class="menu-logo">
-          <a href="#page1">
+          <a href="#main">
             <img src="images/kuo.png" alt="郭奕良 Steven Kuo" />
             <h2>KUO</h2>
           </a>
         </div>
         <div class="menu-link">
           <ul>
-            <li class><a href="#page2">ABOUT</a></li>
-            <li class><a href="#page3">SKILL</a></li>
-            <li class><a href="#page4">WORKS</a></li>
-            <li class><a href="#page5">CONTACT</a></li>
+            <li class><a href="#about">ABOUT</a></li>
+            <li class><a href="#skill">SKILL</a></li>
+            <li class><a href="#works">WORKS</a></li>
+            <li class><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
       </div>
       <div class="parallax">
-        <div class="main" id="page1">
+        <div class="main" id="main">
           <div class="main-content">
             <h1>KUO</h1>
             <h1>RESUME</h1>
@@ -78,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="about" id="page2">
+      <div class="about" id="about">
         <div class="about-content">
           <h1>ABOUT</h1>
           <hr />
@@ -95,15 +95,15 @@
           </div>
         </div>
       </div>
-      <div class="skill" id="page3">
+      <div class="skill" id="skill">
         <div class="skill-content">
           <h1>SKILL</h1>
           <hr />
-          <ul class="skill-content-detail">
+          <ul class="skill-detail">
             <li>
               <img
                 src="images/FRONTEND.jpg"
-                class="skill-content-detail-image"
+                class="skill-detail-image"
                 alt="frontend"
               />
               <p>HTML5、CSS3、RWD</p>
@@ -114,7 +114,7 @@
             <li>
               <img
                 src="images/BACKEND.jpg"
-                class="skill-content-detail-image"
+                class="skill-detail-image"
                 alt="backend"
               />
               <p>Django、Python爬蟲、自動化</p>
@@ -124,99 +124,99 @@
             <li>
               <img
                 src="images/TOOLS.jpg"
-                class="skill-content-detail-image"
+                class="skill-detail-image"
                 alt="tools"
               />
-              <p>VS Code、NPM、Yarn、Git<br />Gulp, Webpack</p>
+              <p>VS Code、NPM、Yarn、Git</p>
+              <p>Gulp、Webpack</p>
             </li>
           </ul>
         </div>
       </div>
-      <div class="works" id="page4">
+      <div class="works" id="works">
         <div class="works-content">
           <h1>WORKS</h1>
           <hr />
-          <div id="myBtn" class="works-content-items">
-            <div class="works-content-items-item" id="works01">
-              <div class="works-content-items-item-title">
+          <div id="myBtn" class="works-items">
+            <div class="works-item" id="works01">
+              <div class="works-item-title">
                 <p>Vue</p>
                 <p>E-commerce</p>
               </div>
               <img
                 src="images/vue-ecommerce-1.jpg"
-                class="works-content-items-item-image"
+                class="works-item-image"
                 alt="vue-ecommerce"
               />
             </div>
-            <div class="works-content-items-item" id="works02">
-              <div class="works-content-items-item-title">
+            <div class="works-item" id="works02">
+              <div class="works-item-title">
                 <p>React</p>
                 <p>Shopping-Cart</p>
               </div>
               <img
                 src="images/React-Shopping-Cart.jpg"
-                class="works-content-items-item-image"
+                class="works-item-image"
                 alt="react-shopping-cart"
               />
             </div>
-            <div class="works-content-items-item slider" id="works03">
-              <div class="works-content-items-item-title">
+            <div class="works-item slider" id="works03">
+              <div class="works-item-title">
                 <p>React</p>
                 <p>Works</p>
               </div>
               <span>
                 <img
                   src="images/React-To-Do List.jpg"
-                  class="works-content-items-item-image"
+                  class="works-item-image"
                   alt="react-to-do-list"
                 />
               </span>
               <span>
                 <img
                   src="images/React-CommentApp.jpg"
-                  class="works-content-items-item-image"
+                  class="works-item-image"
                   alt="react-commentapp"
                 />
               </span>
               <span>
                 <img
                   src="images/React-WeatherApp.jpg"
-                  class="works-content-items-item-image"
+                  class="works-item-image"
                   alt="react-weatherapp"
                 />
               </span>
             </div>
-
-            <div class="works-content-items-item" id="works04">
-              <div class="works-content-items-item-title">
+            <div class="works-item" id="works04">
+              <div class="works-item-title">
                 <p>jQuery</p>
                 <p>Google Maps API</p>
               </div>
               <img
                 src="images/night-1.jpg"
-                class="works-content-items-item-image"
+                class="works-item-image"
                 alt="nightmarket"
               />
             </div>
-            <div class="works-content-items-item" id="works05">
-              <div class="works-content-items-item-title">
+            <div class="works-item" id="works05">
+              <div class="works-item-title">
                 <p>jQuery</p>
                 <p>Twitch API</p>
               </div>
               <img
                 src="images/TwitchApi.jpg"
-                class="works-content-items-item-image"
+                class="works-item-image"
                 alt="twitchapi"
               />
             </div>
-            <div class="works-content-items-item" id="works06">
-              <div class="works-content-items-item-title">
+            <div class="works-item" id="works06">
+              <div class="works-item-title">
                 <p>Django</p>
                 <p>社群網站</p>
               </div>
               <img
                 src="images/mate-1.jpg"
-                class="works-content-items-item-image"
+                class="works-item-image"
                 alt="django-mate"
               />
             </div>
@@ -224,15 +224,11 @@
         </div>
       </div>
       <div class="parallax">
-        <div class="contact" id="page5">
+        <div class="contact" id="contact">
           <div class="contact-content">
             <h1>CONTACT</h1>
             <hr />
-            <img
-              src="images/photo.jpg"
-              class="contact-content-photo"
-              alt="photo"
-            />
+            <img src="images/photo.jpg" class="contact-photo" alt="photo" />
             <p>v8661087@gmail.com</p>
             <a
               href="https://github.com/v8661087"
@@ -241,7 +237,7 @@
             >
               <img
                 src="images/github.png"
-                class="contact-content-github-image"
+                class="contact-github"
                 alt="github"
               />
             </a>
@@ -263,7 +259,7 @@
             >Demo</a
           >
         </p>
-        <span>Vue電商網站</span><br />
+        <span>Vue電商網站</span>
         <span
           >Vue CLI 4建立開發環境，Vuex儲存狀態容器，串接由Node.js Express
           MongoDB Atlas Heroku建立之RESTful API取得資料，Vue
@@ -297,7 +293,7 @@
             >Demo</a
           >
         </p>
-        <span>React購物車</span><br />
+        <span>React購物車</span>
         <span
           >Create React App建立開發環境，ES6 Class建立組件，React
           Redux資料畫面分離，儲存購物車內商品資訊至localstorage，React
@@ -330,10 +326,10 @@
             >Demo</a
           >
         </p>
-        <span>React Hooks建立組件</span><br />
+        <span>React Hooks建立組件</span>
         <span>To-Do List</span>
         <a
-          href="https://v8661087.github.io/React-Works/#/To-Do-List"
+          href="https://v8661087.github.io/React-Works/To-Do-List/"
           target="_blank"
           rel="noopener"
         >
@@ -347,7 +343,7 @@
           Firestore即時資料庫。</span
         >
         <a
-          href="https://v8661087.github.io/React-Works/#/CommentApp"
+          href="https://v8661087.github.io/React-Works/CommentApp/"
           target="_blank"
           rel="noopener"
         >
@@ -359,9 +355,9 @@
         </a>
         <span
           >目前天氣：串接中央氣象局API取得天氣資訊，選擇城市及主題並儲存至localstorage。</span
-        ><br />
+        >
         <a
-          href="https://v8661087.github.io/React-Works/#/WeatherApp"
+          href="https://v8661087.github.io/React-Works/WeatherApp/"
           target="_blank"
           rel="noopener"
         >
@@ -369,40 +365,6 @@
             src="images/React-WeatherApp.gif"
             class="modal-content-image"
             alt="React-WeatherApp"
-          />
-        </a>
-      </div>
-    </div>
-    <div id="myModal01" class="modal">
-      <div class="modal-content">
-        <button class="modal__close">&times;</button>
-        <h3>Vue</h3>
-        <h3>E-commerce</h3>
-        <p>
-          <a
-            href="https://v8661087.github.io/Vue-Ecommerce/"
-            class="modal-content__check"
-            target="_blank"
-            rel="noopener"
-            >Demo</a
-          >
-        </p>
-        <span>Vue電商網站</span><br />
-        <span
-          >Vue CLI 3建立開發環境，Vuex儲存狀態容器，串接由Node.js Express
-          MongoDB Atlas Heroku建立之RESTful API取得資料，Vue
-          Router管理路由，localStorage儲存購物車資訊，內建Service
-          Worker製作Progressive Web App。</span
-        >
-        <a
-          href="https://v8661087.github.io/Vue-Ecommerce/"
-          target="_blank"
-          rel="noopener"
-        >
-          <img
-            src="images/vue-ecommerce-1.jpg"
-            class="modal-content-image"
-            alt="vue-ecommerce"
           />
         </a>
       </div>
@@ -421,7 +383,7 @@
             >Demo</a
           >
         </p>
-        <span>台北夜市</span><br />
+        <span>台北夜市</span>
         <span>串接台北市資料大平臺夜市專區攤商資訊API，Google Maps API。</span>
         <a href="TaipeiNightMarket.html" target="_blank" rel="noopener">
           <img
@@ -454,7 +416,7 @@
             >Demo</a
           >
         </p>
-        <span>Twitch League of Legends Live Streams</span><br />
+        <span>Twitch League of Legends Live Streams</span>
         <span>點擊上方按鈕進行中英文頻道切換</span>
         <a href="TwitchApi.html" target="_blank" rel="noopener">
           <img

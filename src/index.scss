@@ -11,6 +11,11 @@ body {
   height: 100%;
   text-decoration: none;
 }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 a {
   color: white;
   text-decoration: none;
@@ -21,9 +26,11 @@ h3,
 h4,
 p {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 p {
   font-size: 20px;
+  margin: 0;
 }
 h1 {
   font-size: 40px;
@@ -41,7 +48,7 @@ h2 {
   &-logo {
     padding: 12px 0px 15px 30px;
     width: 100%;
-    > a{
+    a {
       display: flex;
       width: 120px;
       align-items: center;
@@ -57,10 +64,8 @@ h2 {
     }
     li {
       margin-right: 20px;
-      width: 96px;
     }
     a {
-      transition: 0.5s;
       height: 25px;
       font-family: Tahoma;
       font-size: 20px;
@@ -69,6 +74,7 @@ h2 {
       padding: 17px;
       justify-content: center;
       align-items: center;
+      transition: 0.5s;
       &:hover {
         background-color: black;
         color: white;
@@ -109,27 +115,27 @@ hr {
   background: $black;
   &-content {
     padding: 81px 0;
-    &-detail {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      li {
-        padding: 9px 21px;
-        margin: 1%;
-      }
-      p {
-        color: $gray;
-        line-height: 24px;
-      }
-      &-image {
-        margin-bottom: 12px;
-        border-radius: 5px;
-        transition: transform 1s;
-        max-width: 300px;
-        width: 100%;
-        &:hover {
-          transform: scale(1.1);
-        }
+  }
+  &-detail {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li {
+      padding: 9px 21px;
+      margin: 1%;
+    }
+    p {
+      color: $gray;
+      line-height: 24px;
+    }
+    &-image {
+      margin-bottom: 12px;
+      border-radius: 5px;
+      transition: transform 1s;
+      max-width: 270px;
+      width: 100%;
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
@@ -140,36 +146,36 @@ hr {
   text-align: center;
   &-content {
     padding: 81px 0;
-    &-items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      &-item {
-        position: relative;
-        width: 320px;
-        height: 200px;
-        margin: 1%;
-        cursor: pointer;
-        &:hover &-title {
-          display: block;
-          z-index: 1;
-          background: rgba(34, 34, 34, 0.6);
-        }
-        &-title {
-          width: 320px;
-          position: relative;
-          display: none;
-          padding: 81px 0;
-        }
-        &-image {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 320px;
-          height: 200px;
-          transition: 0.3s;
-        }
-      }
+  }
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &-item {
+    position: relative;
+    width: 320px;
+    height: 200px;
+    margin: 1%;
+    cursor: pointer;
+    &:hover &-title {
+      display: block;
+      z-index: 1;
+      background: rgba(34, 34, 34, 0.6);
+    }
+    &-title {
+      width: 320px;
+      position: relative;
+      display: none;
+      padding: 78px 0;
+    }
+    &-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 320px;
+      height: 200px;
+      transition: 0.3s;
     }
   }
 }
@@ -181,17 +187,17 @@ hr {
     p {
       margin: 3px 0 9px;
     }
-    &-photo {
-      width: 219px;
-      object-fit: cover;
-      border-radius: 50%;
-      object-position: center top;
-      border: $black solid 9px;
-    }
-    &-github-image {
-      width: 40px;
-      border-radius: 50%;
-    }
+  }
+  &-photo {
+    width: 219px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center top;
+    border: $black solid 9px;
+  }
+  &-github {
+    width: 40px;
+    border-radius: 50%;
   }
 }
 .modal {
@@ -222,8 +228,9 @@ hr {
       text-align: center;
     }
     span {
+      display: block;
       text-align: left;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "Times New Roman", Times, serif;
       font-size: 21px;
     }
     &__check {
@@ -241,7 +248,7 @@ hr {
   }
   &__close {
     background-color: $black;
-    border:none;
+    border: none;
     outline: none;
     position: absolute;
     color: $gray;
@@ -262,12 +269,10 @@ hr {
   }
 }
 
-
 .slider span {
   opacity: 0;
-  animation: round 9s linear infinite ;
+  animation: round 9s linear infinite;
 }
-
 
 @keyframes round {
   9% {
@@ -292,20 +297,19 @@ hr {
 
 .parallax {
   background-image: url("../images/typewriter.jpg");
-  height: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.resume{
+.resume {
   margin-top: 15px;
-  a{
+  a {
     background-color: $black;
-  padding: 9px 15px;
-  border-radius: 300px;
-  letter-spacing: 2px;
-  font-family: Tahoma;
-  font-size: 18px;
+    padding: 9px 15px;
+    border-radius: 300px;
+    letter-spacing: 2px;
+    font-family: Tahoma;
+    font-size: 18px;
   }
 }

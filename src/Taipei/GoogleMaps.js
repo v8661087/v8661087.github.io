@@ -92,10 +92,10 @@ function initMap() {
       }
     });
     document.getElementById("mySelect").addEventListener("change", function() {
-      if (document.getElementById("mySelect").value == marker[i].title) {
+      if (document.getElementById("mySelect").value === marker[i].title) {
         map.setZoom(15);
         map.setCenter(marker[i].getPosition());
-      } else if (document.getElementById("mySelect").value == "請選擇") {
+      } else if (document.getElementById("mySelect").value === "請選擇") {
         map.setZoom(12);
         map.setCenter({ lat: 25.0477505, lng: 121.5170599 });
       }
