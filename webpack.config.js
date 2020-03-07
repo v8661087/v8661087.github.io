@@ -27,7 +27,13 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
           "css-loader",
           "postcss-loader",
           "sass-loader"
@@ -40,7 +46,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              publicPath: "./img",
+              publicPath: "../dist/img",
               outputPath: "./img"
             }
           },

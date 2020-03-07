@@ -30,7 +30,7 @@ const FILES_TO_CACHE = [
   "images/mate-5.jpg",
   "images/photo.jpg",
   "images/github.png",
-  "src/reset.css",
+  "src/normalize.css",
   "dist/index.bundle.css",
   "dist/modal.bundle.js",
   "dist/scroll.bundle.js",
@@ -70,7 +70,7 @@ self.addEventListener("activate", evt => {
 self.addEventListener("fetch", evt => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
   // CODELAB: Add fetch event handler here.
- /* if (evt.request.url.includes('/forecast/')) {
+  if (evt.request.url.includes('/forecast/')) {
     console.log('[Service Worker] Fetch (data)', evt.request.url);
     evt.respondWith(
         caches.open(DATA_CACHE_NAME).then((cache) => {
@@ -87,7 +87,7 @@ self.addEventListener("fetch", evt => {
               });
         }));
     return;
-  }*/
+  }
   evt.respondWith(
       caches.open(CACHE_NAME).then((cache) => {
         return cache.match(evt.request)
