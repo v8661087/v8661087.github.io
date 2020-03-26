@@ -1,25 +1,25 @@
 // Get the modal
-var modal01 = document.getElementById("myModal01");
-var modal02 = document.getElementById("myModal02");
-var modal03 = document.getElementById("myModal03");
-var modal04 = document.getElementById("myModal04");
-var modal05 = document.getElementById("myModal05");
-var modal06 = document.getElementById("myModal06");
+let modal01 = document.getElementById("myModal01");
+let modal02 = document.getElementById("myModal02");
+let modal03 = document.getElementById("myModal03");
+let modal04 = document.getElementById("myModal04");
+let modal05 = document.getElementById("myModal05");
+let modal06 = document.getElementById("myModal06");
 
 // Get the button that opens the modal
-var btn01 = document.getElementById("works01");
-var btn02 = document.getElementById("works02");
-var btn03 = document.getElementById("works03");
-var btn04 = document.getElementById("works04");
-var btn05 = document.getElementById("works05");
-var btn06 = document.getElementById("works06");
+let btn01 = document.getElementById("works01");
+let btn02 = document.getElementById("works02");
+let btn03 = document.getElementById("works03");
+let btn04 = document.getElementById("works04");
+let btn05 = document.getElementById("works05");
+let btn06 = document.getElementById("works06");
 // Get the <span> element that closes the modal
-var span01 = document.getElementsByClassName("modal__close")[0];
-var span02 = document.getElementsByClassName("modal__close")[1];
-var span03 = document.getElementsByClassName("modal__close")[2];
-var span04 = document.getElementsByClassName("modal__close")[3];
-var span05 = document.getElementsByClassName("modal__close")[4];
-var span06 = document.getElementsByClassName("modal__close")[5];
+let span01 = document.getElementsByClassName("modal__close")[0];
+let span02 = document.getElementsByClassName("modal__close")[1];
+let span03 = document.getElementsByClassName("modal__close")[2];
+let span04 = document.getElementsByClassName("modal__close")[3];
+let span05 = document.getElementsByClassName("modal__close")[4];
+let span06 = document.getElementsByClassName("modal__close")[5];
 
 // When the user clicks the button, open the modal
 btn01.onclick = function() {

@@ -1,6 +1,3 @@
-$("#mySelect").on("change", GetMarket);
-$("#mySelect").on("change", GetFood);
-
 function GetMarket() {
   $("#listContent").empty();
   $("#NightMarket").empty();
@@ -13,7 +10,7 @@ function GetMarket() {
       if (info[i].夜市名稱 === $("#mySelect").val()) {
         if (info[i].交通資訊 !== null) {
           $("#NightMarket").append(
-              `<div>夜市名稱:${info[i].夜市名稱}<br/>
+            `<div>夜市名稱:${info[i].夜市名稱}<br/>
               交通資訊${info[i].交通資訊}<br/>
               所在位置:${info[i].所在位置}<br/>
               營業時間:${info[i].營業時間}</div>`
@@ -48,3 +45,8 @@ function GetFood() {
     }
   });
 }
+function GetInformation() {
+  GetMarket();
+  GetFood();
+}
+$("#mySelect").on("change", GetInformation);

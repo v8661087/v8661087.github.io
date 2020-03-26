@@ -1,11 +1,11 @@
 function initMap() {
   //設定中心點座標
-  var map = new google.maps.Map(document.getElementById("map"), {
+  let map = new google.maps.Map(document.getElementById("map"), {
     zoom: 12,
     center: { lat: 25.0477505, lng: 121.5170599 }
   });
   //顯示各區的點
-  var data = [
+  let data = [
     {
       position: { lat: 25.08865, lng: 121.524396 },
       map: map,
@@ -87,8 +87,7 @@ function initMap() {
       map.setCenter(marker[i].getPosition());
       if (document.getElementById("mySelect").value !== marker[i].title) {
         document.getElementById("mySelect").value = marker[i].title;
-        GetMarket();
-        GetFood();
+        GetInformation()
       }
     });
     document.getElementById("mySelect").addEventListener("change", function() {

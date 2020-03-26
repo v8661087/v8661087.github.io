@@ -1,6 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -9,7 +9,7 @@ module.exports = {
     modal: ["./modal.js"],
     scroll: ["./scroll.js"],
     smooth_scroll: ["./smooth_scroll.js"],
-    TwitchApi:["./Twitch/TwitchApi.js"]
+    TwitchApi: ["./Twitch/TwitchApi.js"]
   },
   output: {
     filename: "[name].bundle.js",
@@ -30,9 +30,9 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development',
-            },
+              publicPath: "../",
+              hmr: process.env.NODE_ENV === "development"
+            }
           },
           "css-loader",
           "postcss-loader",
@@ -70,5 +70,5 @@ module.exports = {
         }
       }
     ]
-  },
+  }
 };
