@@ -267,7 +267,11 @@ hr {
     display: none;
   }
 }
-
+@media (max-width: 900px) {
+  .blank-item {
+    display: none;
+  }
+}
 .slider span {
   opacity: 0;
   animation: round 9s linear infinite;

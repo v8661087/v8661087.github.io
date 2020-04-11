@@ -86,7 +86,9 @@
               href="https://www.cakeresume.com/s--OvsRmfPCgP8HsvO8kxqpwA--/v8661087"
               rel="noopener"
               target="_blank"
-              > → resume</a>
+            >
+              → resume</a
+            >
           </div>
         </div>
       </div>
@@ -104,7 +106,7 @@
               <p>HTML5、CSS3、RWD</p>
               <p>Sass、SCSS、PostCSS</p>
               <p>JavaScript、ES6、jQuery</p>
-              <p>Vue、React</p>
+              <p>Vue、Nuxt、React</p>
             </li>
             <li>
               <img
@@ -133,6 +135,17 @@
           <h1>WORKS</h1>
           <hr />
           <div id="myBtn" class="works-items">
+            <div class="works-item" id="works00">
+              <div class="works-item-title">
+                <p>Nuxt</p>
+                <p>nuxt-pokemon-card</p>
+              </div>
+              <img
+                src="images/nuxt-pokemon-card-index.jpg"
+                class="works-item-image"
+                alt="nuxt-pokemon-card"
+              />
+            </div>
             <div class="works-item" id="works01">
               <div class="works-item-title">
                 <p>Vue</p>
@@ -215,6 +228,16 @@
                 alt="django-mate"
               />
             </div>
+            <div
+              class="works-item blank-item"
+              id="works06"
+              style="visibility: hidden;"
+            ></div>
+            <div
+              class="works-item blank-item"
+              id="works06"
+              style="visibility: hidden;"
+            ></div>
           </div>
         </div>
       </div>
@@ -238,6 +261,61 @@
             </a>
           </div>
         </div>
+      </div>
+    </div>
+    <div id="myModal00" class="modal">
+      <div class="modal-content">
+        <button class="modal__close">&times;</button>
+        <h3>Nuxt</h3>
+        <h3>nuxt-pokemon-card</h3>
+        <p>
+          <a
+            href="https://v8661087.github.io/nuxt-pokemon-card/"
+            class="modal-content__check"
+            target="_blank"
+            rel="noopener"
+            >Demo</a
+          >
+        </p>
+        <span>Nuxt.js寶可夢卡牌對戰</span>
+        <span
+          >使用 Nuxt.js，Vuetify 建立 UI，串接由Node.js Express MongoDB Atlas
+          Heroku建立之RESTful API取得資料，內建Service Worker製作Progressive Web
+          App。</span
+        >
+        <a
+          href="https://v8661087.github.io/nuxt-pokemon-card/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="images/nuxt-pokemon-card-index.jpg"
+            class="modal-content-image"
+            alt="vue-ecommerce"
+          />
+        </a>
+        <a
+          href="https://v8661087.github.io/nuxt-pokemon-card/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="images/nuxt-pokemon-card-pokemon.jpg"
+            class="modal-content-image"
+            alt="vue-ecommerce"
+          />
+        </a>
+        <a
+          href="https://v8661087.github.io/nuxt-pokemon-card/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            src="images/nuxt-pokemon-card-battle.jpg"
+            class="modal-content-image"
+            alt="vue-ecommerce"
+          />
+        </a>
       </div>
     </div>
     <div id="myModal01" class="modal">
@@ -473,10 +551,10 @@
         console.log("Will service worker register?");
         navigator.serviceWorker
           .register("service-worker.js")
-          .then(function(reg) {
+          .then(function (reg) {
             console.log("Yes it did.");
           })
-          .catch(function(err) {
+          .catch(function (err) {
             console.log("No it didn't. This happend:", err);
           });
       }
