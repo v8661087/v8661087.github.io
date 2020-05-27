@@ -20,6 +20,9 @@ const FILES_TO_CACHE = [
   "images/React-WeatherApp.jpg",
   "images/React-WeatherApp.gif",
   "images/vue-ecommerce-1.jpg",
+  "images/nuxt-pokemon-card-index.jpg",
+  "images/nuxt-pokemon-card-battle.jpg",
+  "images/nuxt-pokemon-card-pokemon.jpg",
   "images/night-1.jpg",
   "images/night-2.jpg",
   "images/TwitchApi.jpg",
@@ -35,13 +38,13 @@ const FILES_TO_CACHE = [
   "dist/modal.bundle.js",
   "dist/scroll.bundle.js",
   "dist/smooth_scroll.bundle.js",
-  "manifest.json"
+  "manifest.json",
 ];
-self.addEventListener("install", evt => {
+self.addEventListener("install", (evt) => {
   console.log("[ServiceWorker] Install");
   // CODELAB: Precache static resources here.
   evt.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
+    caches.open(CACHE_NAME).then((cache) => {
       console.log("[ServiceWorker] Pre-caching offline page");
       return cache.addAll(FILES_TO_CACHE);
     })
@@ -49,13 +52,13 @@ self.addEventListener("install", evt => {
   self.skipWaiting();
 });
 
-self.addEventListener("activate", evt => {
+self.addEventListener("activate", (evt) => {
   console.log("[ServiceWorker] Activate");
   // CODELAB: Remove previous cached data from disk.
   evt.waitUntil(
-    caches.keys().then(keyList => {
+    caches.keys().then((keyList) => {
       return Promise.all(
-        keyList.map(key => {
+        keyList.map((key) => {
           if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
             console.log("[ServiceWorker] Removing old cache", key);
             return caches.delete(key);
@@ -67,33 +70,34 @@ self.addEventListener("activate", evt => {
   self.clients.claim();
 });
 
-self.addEventListener("fetch", evt => {
+self.addEventListener("fetch", (evt) => {
   console.log("[ServiceWorker] Fetch", evt.request.url);
   // CODELAB: Add fetch event handler here.
-  if (evt.request.url.includes('/forecast/')) {
-    console.log('[Service Worker] Fetch (data)', evt.request.url);
+  if (evt.request.url.includes("/forecast/")) {
+    console.log("[Service Worker] Fetch (data)", evt.request.url);
     evt.respondWith(
-        caches.open(DATA_CACHE_NAME).then((cache) => {
-          return fetch(evt.request)
-              .then((response) => {
-                // If the response was good, clone it and store it in the cache.
-                if (response.status === 200) {
-                  cache.put(evt.request.url, response.clone());
-                }
-                return response;
-              }).catch((err) => {
-                // Network request failed, try to get it from the cache.
-                return cache.match(evt.request);
-              });
-        }));
+      caches.open(DATA_CACHE_NAME).then((cache) => {
+        return fetch(evt.request)
+          .then((response) => {
+            // If the response was good, clone it and store it in the cache.
+            if (response.status === 200) {
+              cache.put(evt.request.url, response.clone());
+            }
+            return response;
+          })
+          .catch((err) => {
+            // Network request failed, try to get it from the cache.
+            return cache.match(evt.request);
+          });
+      })
+    );
     return;
   }
   evt.respondWith(
-      caches.open(CACHE_NAME).then((cache) => {
-        return cache.match(evt.request)
-            .then((response) => {
-              return response || fetch(evt.request);
-            });
-      })
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(evt.request).then((response) => {
+        return response || fetch(evt.request);
+      });
+    })
   );
 });

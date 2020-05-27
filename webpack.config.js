@@ -9,18 +9,18 @@ module.exports = {
     modal: ["./modal.js"],
     scroll: ["./scroll.js"],
     smooth_scroll: ["./smooth_scroll.js"],
-    TwitchApi: ["./Twitch/TwitchApi.js"]
+    TwitchApi: ["./Twitch/TwitchApi.js"],
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "./dist")
+    path: path.resolve(__dirname, "./dist"),
   },
   mode: "production",
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "./[name].bundle.css"
-    })
+      filename: "./[name].bundle.css",
+    }),
   ],
   module: {
     rules: [
@@ -31,13 +31,13 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: "../",
-              hmr: process.env.NODE_ENV === "development"
-            }
+              hmr: process.env.NODE_ENV === "development",
+            },
           },
           "css-loader",
           "postcss-loader",
-          "sass-loader"
-        ]
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|jpg|gif|jpe?g|svg)$/,
@@ -47,28 +47,28 @@ module.exports = {
             options: {
               name: "[name].[ext]",
               publicPath: "../dist/img",
-              outputPath: "./img"
-            }
+              outputPath: "./img",
+            },
           },
           //圖片壓縮
           {
             loader: "image-webpack-loader",
             options: {
-              bypassOnDebug: true
-            }
-          }
-        ]
+              bypassOnDebug: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(js)$/,
         exclude: /(node_modules)/,
         use: {
-          loader: "babel-loader",
+          loader: "babel-loader?cacheDirectory=true",
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
-      }
-    ]
-  }
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
 };
