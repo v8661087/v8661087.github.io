@@ -1,7 +1,9 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HappyPack = require("happypack");
 const webpack = require("webpack");
+
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
@@ -20,6 +22,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "./[name].bundle.css",
+    }),
+    new HappyPack({
+      id: "happybabel",
+      loaders: ["babel-loader?cacheDirectory"],
     }),
   ],
   module: {
@@ -61,12 +67,9 @@ module.exports = {
       },
       {
         test: /\.(js)$/,
-        exclude: /(node_modules)/,
         use: {
-          loader: "babel-loader?cacheDirectory=true",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
+          //loader: "babel-loader?cacheDirectory=true",
+          loader: "happypack/loader?id=happybabel",
         },
       },
     ],
