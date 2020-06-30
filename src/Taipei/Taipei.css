@@ -10,11 +10,11 @@ body {
   margin: 0;
   padding: 0;
 }
-a{
-  text-decoration: none
+a {
+  text-decoration: none;
 }
-h1{
-  margin: 0 9px
+h1 {
+  margin: 0 9px;
 }
 header {
   margin: 0 9px 9px;
@@ -23,8 +23,8 @@ header {
 #choice {
   color: rgb(92, 143, 255);
 }
-.list{
-  margin: 0 auto
+.list {
+  margin: 0 auto;
 }
 .listTitle {
   display: flex;
@@ -33,7 +33,7 @@ header {
   width: 660px;
   height: 33px;
   font-weight: bold;
-  margin: 6px 0 0 ;
+  margin: 6px 0 0;
 }
 select {
   width: 180px;
@@ -41,7 +41,7 @@ select {
   background-color: #17181c;
   color: rgb(182, 182, 182);
   outline: none;
-  font-size: 18px
+  font-size: 18px;
 }
 .name {
   flex: none;
@@ -53,7 +53,7 @@ select {
 }
 #map {
   flex: none;
-  margin:0 auto;
+  margin: 0 auto;
   width: 360px;
   height: 360px;
 }
@@ -89,5 +89,27 @@ select {
   width: 45px;
   height: 45px;
   text-align: center;
-  line-height: 45px
+  line-height: 45px;
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border: 6px solid gray;
+  border-top: 6px solid white;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  margin-top: -50px;
+  margin-left: -50px;
+  display: none;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
