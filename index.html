@@ -28,6 +28,7 @@
     ></script>
     <link rel="stylesheet" type="text/css" href="src/normalize.css" />
     <link rel="stylesheet" type="text/css" href="dist/index.bundle.css" />
+    <script src="dist/navbar.bundle.js" defer></script>
     <script src="dist/smooth_scroll.bundle.js" defer></script>
     <script src="dist/scroll.bundle.js" defer></script>
     <script src="dist/modal.bundle.js" defer></script>
@@ -46,204 +47,199 @@
     </script>
   </head>
   <body>
-    <div>
-      <div class="menu">
-        <div class="menu-logo">
-          <a href="#main">
-            <img src="images/kuo.png" alt="郭奕良 Steven Kuo" />
-            <h2>KUO</h2>
+    <nav class="menu">
+      <div class="menu-logo">
+        <a href="#main">
+          <img src="images/kuo.png" alt="郭奕良 Steven Kuo" />
+          <h2>KUO</h2>
+        </a>
+      </div>
+      <div class="menu-link">
+        <ul>
+          <li class><a href="#about">ABOUT</a></li>
+          <li class><a href="#skills">SKILLS</a></li>
+          <li class><a href="#works">WORKS</a></li>
+          <li class><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="hamburger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </nav>
+    <div class="parallax">
+      <section class="main" id="main">
+        <div class="main-content">
+          <h1>KUO</h1>
+          <h1>RESUME</h1>
+          <hr />
+          <p>Welcome</p>
+        </div>
+      </section>
+    </div>
+    <section class="about" id="about">
+      <div class="about-content">
+        <h1>ABOUT</h1>
+        <hr />
+        <p>我是郭奕良 Steven Kuo，畢業於淡江大學財務金融學系，</p>
+        <p>接觸程式後深感興趣，便決定往這方面發展，</p>
+        <p>起初自學 Python 爬蟲、自動化、Django，</p>
+        <p>
+          目前學習前端一年，除了基本前端使用工具外， 也具有 Vue、React
+          使用經驗。
+        </p>
+        <div class="resume">
+          <a
+            href="https://www.cakeresume.com/s--OvsRmfPCgP8HsvO8kxqpwA--/v8661087"
+            rel="noopener"
+            target="_blank"
+          >
+            → resume</a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <div class="skills-content">
+        <h1>SKILLS</h1>
+        <hr />
+        <ul class="skills-detail">
+          <li>
+            <img
+              src="images/FRONTEND.jpg"
+              class="skills-detail-image"
+              alt="frontend"
+            />
+            <p>HTML5、CSS3、RWD</p>
+            <p>Sass、SCSS、PostCSS</p>
+            <p>JavaScript、ES6、jQuery</p>
+            <p>Vue、Nuxt、React</p>
+          </li>
+          <li>
+            <img
+              src="images/BACKEND.jpg"
+              class="skills-detail-image"
+              alt="backend"
+            />
+            <p>Django、Python爬蟲、自動化</p>
+            <p>Node.js、MongoDB Atlas、Heroku</p>
+            <p>Firebase</p>
+          </li>
+          <li>
+            <img
+              src="images/TOOLS.jpg"
+              class="skills-detail-image"
+              alt="tools"
+            />
+            <p>VSCode、NPM、Yarn、Git</p>
+            <p>Gulp、Webpack</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="works" id="works">
+      <div class="works-content">
+        <h1>WORKS</h1>
+        <hr />
+        <div id="myBtn" class="works-items">
+          <div class="works-item" id="works01">
+            <div class="works-item-title">
+              <p>Nuxt</p>
+              <p>nuxt-pokemon-card</p>
+            </div>
+            <img
+              src="images/nuxt-pokemon-card-index.jpg"
+              class="works-item-image"
+              alt="nuxt-pokemon-card"
+            />
+          </div>
+          <div class="works-item" id="works02">
+            <div class="works-item-title">
+              <p>Vue</p>
+              <p>E-commerce</p>
+            </div>
+            <img
+              src="images/vue-ecommerce-1.jpg"
+              class="works-item-image"
+              alt="vue-ecommerce"
+            />
+          </div>
+          <div class="works-item" id="works03">
+            <div class="works-item-title">
+              <p>React</p>
+              <p>Shopping-Cart</p>
+            </div>
+            <img
+              src="images/React-Shopping-Cart.jpg"
+              class="works-item-image"
+              alt="react-shopping-cart"
+            />
+          </div>
+          <div class="works-item slider" id="works04">
+            <div class="works-item-title">
+              <p>React</p>
+              <p>Works</p>
+            </div>
+            <span>
+              <img
+                src="images/React-To-Do List.jpg"
+                class="works-item-image"
+                alt="react-to-do-list"
+              />
+            </span>
+            <span>
+              <img
+                src="images/React-CommentApp.jpg"
+                class="works-item-image"
+                alt="react-commentapp"
+              />
+            </span>
+            <span>
+              <img
+                src="images/React-WeatherApp.jpg"
+                class="works-item-image"
+                alt="react-weatherapp"
+              />
+            </span>
+          </div>
+          <div class="works-item" id="works05">
+            <div class="works-item-title">
+              <p>jQuery</p>
+              <p>Google Maps API</p>
+            </div>
+            <img
+              src="images/night-1.jpg"
+              class="works-item-image"
+              alt="nightmarket"
+            />
+          </div>
+          <div class="works-item" id="works06">
+            <div class="works-item-title">
+              <p>Django</p>
+              <p>社群網站</p>
+            </div>
+            <img
+              src="images/mate-1.jpg"
+              class="works-item-image"
+              alt="django-mate"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="parallax">
+      <footer class="contact" id="contact">
+        <div class="contact-content">
+          <h1>CONTACT</h1>
+          <hr />
+          <img src="images/photo.jpg" class="contact-photo" alt="photo" />
+          <p>v8661087@gmail.com</p>
+          <a href="https://github.com/v8661087" rel="noopener" target="_blank">
+            <img src="images/github.png" class="contact-github" alt="github" />
           </a>
         </div>
-        <div class="menu-link">
-          <ul>
-            <li class><a href="#about">ABOUT</a></li>
-            <li class><a href="#skills">SKILLS</a></li>
-            <li class><a href="#works">WORKS</a></li>
-            <li class><a href="#contact">CONTACT</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="parallax">
-        <div class="main" id="main">
-          <div class="main-content">
-            <h1>KUO</h1>
-            <h1>RESUME</h1>
-            <hr />
-            <p>Welcome</p>
-          </div>
-        </div>
-      </div>
-      <div class="about" id="about">
-        <div class="about-content">
-          <h1>ABOUT</h1>
-          <hr />
-          <p>我是郭奕良 Steven Kuo，畢業於淡江大學財務金融學系，</p>
-          <p>接觸程式後深感興趣，便決定往這方面發展，</p>
-          <p>起初自學 Python 爬蟲、自動化、Django，</p>
-          <p>
-            目前學習前端一年，除了基本前端使用工具外， 也具有 Vue、React
-            使用經驗。
-          </p>
-          <div class="resume">
-            <a
-              href="https://www.cakeresume.com/s--OvsRmfPCgP8HsvO8kxqpwA--/v8661087"
-              rel="noopener"
-              target="_blank"
-            >
-              → resume</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="skills" id="skills">
-        <div class="skills-content">
-          <h1>SKILLS</h1>
-          <hr />
-          <ul class="skills-detail">
-            <li>
-              <img
-                src="images/FRONTEND.jpg"
-                class="skills-detail-image"
-                alt="frontend"
-              />
-              <p>HTML5、CSS3、RWD</p>
-              <p>Sass、SCSS、PostCSS</p>
-              <p>JavaScript、ES6、jQuery</p>
-              <p>Vue、Nuxt、React</p>
-            </li>
-            <li>
-              <img
-                src="images/BACKEND.jpg"
-                class="skills-detail-image"
-                alt="backend"
-              />
-              <p>Django、Python爬蟲、自動化</p>
-              <p>Node.js、MongoDB Atlas、Heroku</p>
-              <p>Firebase</p>
-            </li>
-            <li>
-              <img
-                src="images/TOOLS.jpg"
-                class="skills-detail-image"
-                alt="tools"
-              />
-              <p>VSCode、NPM、Yarn、Git</p>
-              <p>Gulp、Webpack</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="works" id="works">
-        <div class="works-content">
-          <h1>WORKS</h1>
-          <hr />
-          <div id="myBtn" class="works-items">
-            <div class="works-item" id="works01">
-              <div class="works-item-title">
-                <p>Nuxt</p>
-                <p>nuxt-pokemon-card</p>
-              </div>
-              <img
-                src="images/nuxt-pokemon-card-index.jpg"
-                class="works-item-image"
-                alt="nuxt-pokemon-card"
-              />
-            </div>
-            <div class="works-item" id="works02">
-              <div class="works-item-title">
-                <p>Vue</p>
-                <p>E-commerce</p>
-              </div>
-              <img
-                src="images/vue-ecommerce-1.jpg"
-                class="works-item-image"
-                alt="vue-ecommerce"
-              />
-            </div>
-            <div class="works-item" id="works03">
-              <div class="works-item-title">
-                <p>React</p>
-                <p>Shopping-Cart</p>
-              </div>
-              <img
-                src="images/React-Shopping-Cart.jpg"
-                class="works-item-image"
-                alt="react-shopping-cart"
-              />
-            </div>
-            <div class="works-item slider" id="works04">
-              <div class="works-item-title">
-                <p>React</p>
-                <p>Works</p>
-              </div>
-              <span>
-                <img
-                  src="images/React-To-Do List.jpg"
-                  class="works-item-image"
-                  alt="react-to-do-list"
-                />
-              </span>
-              <span>
-                <img
-                  src="images/React-CommentApp.jpg"
-                  class="works-item-image"
-                  alt="react-commentapp"
-                />
-              </span>
-              <span>
-                <img
-                  src="images/React-WeatherApp.jpg"
-                  class="works-item-image"
-                  alt="react-weatherapp"
-                />
-              </span>
-            </div>
-            <div class="works-item" id="works05">
-              <div class="works-item-title">
-                <p>jQuery</p>
-                <p>Google Maps API</p>
-              </div>
-              <img
-                src="images/night-1.jpg"
-                class="works-item-image"
-                alt="nightmarket"
-              />
-            </div>
-            <div class="works-item" id="works06">
-              <div class="works-item-title">
-                <p>Django</p>
-                <p>社群網站</p>
-              </div>
-              <img
-                src="images/mate-1.jpg"
-                class="works-item-image"
-                alt="django-mate"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="parallax">
-        <div class="contact" id="contact">
-          <div class="contact-content">
-            <h1>CONTACT</h1>
-            <hr />
-            <img src="images/photo.jpg" class="contact-photo" alt="photo" />
-            <p>v8661087@gmail.com</p>
-            <a
-              href="https://github.com/v8661087"
-              rel="noopener"
-              target="_blank"
-            >
-              <img
-                src="images/github.png"
-                class="contact-github"
-                alt="github"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
+      </footer>
     </div>
     <div id="myModal01" class="modal">
       <div class="modal-content">
