@@ -406,6 +406,7 @@ hr {
 }
 
 .parallax {
+  min-height: 100vh;
   background-image: url('../images/typewriter.jpg');
   background-attachment: fixed;
   background-position: center;
