@@ -3,19 +3,33 @@ $gray: #a0a0a0;
 $white: #fff;
 
 html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  text-align: center;
   text-decoration: none;
   color: $white;
   box-sizing: border-box;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+li {
   list-style-type: none;
 }
 
@@ -29,12 +43,10 @@ h2,
 h3,
 h4,
 p {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
-  margin: 0;
   font-size: 20px;
 }
 
@@ -43,6 +55,10 @@ h1 {
 }
 
 h2 {
+  font-size: 30px;
+}
+
+h3 {
   font-size: 30px;
 }
 
@@ -56,7 +72,9 @@ h2 {
   z-index: 2;
 
   &-logo {
-    padding: 12px 0 15px 30px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 30px;
 
     a {
       display: flex;
@@ -127,15 +145,16 @@ h2 {
 hr {
   width: 36px;
   background: $gray;
-  border: 2px solid $gray;
+  border: 3px solid $gray;
+}
+
+section {
+  min-height: 100vh;
 }
 
 .main {
-  min-height: 100vh;
-
   &-content {
     padding-top: 36vh;
-    text-align: center;
 
     h1 {
       font-size: 80px;
@@ -144,12 +163,10 @@ hr {
 }
 
 .about {
-  min-height: 100vh;
   background: linear-gradient(45deg, #4156cc, #00965c);
 
   &-content {
     padding: 120px 0;
-    text-align: center;
 
     p {
       line-height: 51px;
@@ -158,8 +175,6 @@ hr {
 }
 
 .skills {
-  min-height: 100vh;
-  text-align: center;
   background: $black;
 
   &-content {
@@ -195,8 +210,6 @@ hr {
 }
 
 .works {
-  min-height: 100vh;
-  text-align: center;
   background: linear-gradient(45deg, #a33459, #1b9cad);
 
   &-content {
@@ -241,9 +254,6 @@ hr {
 }
 
 .contact {
-  min-height: 100vh;
-  text-align: center;
-
   &-content {
     padding-top: 81px;
 
@@ -289,12 +299,10 @@ hr {
 
     h4 {
       font-size: 21px;
-      text-align: center;
     }
 
     p {
       margin: 9px 0;
-      text-align: center;
     }
 
     span {
@@ -312,7 +320,8 @@ hr {
     }
 
     &-image {
-      margin: 6px 0;
+      display: block;
+      margin: 6px auto;
       width: 100%;
       max-width: 900px;
       border: 1px $gray solid;
@@ -366,11 +375,6 @@ hr {
 
   .hamburger {
     display: block;
-  }
-}
-@media (max-width: 900px) {
-  .blank-item {
-    display: none;
   }
 }
 
