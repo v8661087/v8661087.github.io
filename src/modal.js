@@ -15,7 +15,7 @@ for (let i = 0; i < $(".modal__close").length; i++) {
 // When the user clicks anywhere outside of the modal, close it
 $(document).click(function (e) {
   for (let i = 0; i < $(".modal").length; i++) {
-    if (event.target === $(".modal")[i]) {
+    if (e.target === $(".modal")[i]) {
       $(".modal")[i].style.display = "none";
       $("body").css("overflow", "auto");
     }

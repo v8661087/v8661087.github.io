@@ -50,16 +50,22 @@ p {
   font-size: 20px;
 }
 
-h1 {
-  font-size: 40px;
-}
-
 h2 {
   font-size: 30px;
 }
 
 h3 {
   font-size: 30px;
+}
+
+hr {
+  width: 36px;
+  background: $gray;
+  border: 3px solid $gray;
+}
+
+section {
+  min-height: 100vh;
 }
 
 .menu {
@@ -89,9 +95,7 @@ h3 {
   }
 
   &-link {
-    ul {
-      display: flex;
-    }
+    display: flex;
 
     li {
       margin-right: 20px;
@@ -142,16 +146,6 @@ h3 {
   }
 }
 
-hr {
-  width: 36px;
-  background: $gray;
-  border: 3px solid $gray;
-}
-
-section {
-  min-height: 100vh;
-}
-
 .main {
   &-content {
     padding-top: 36vh;
@@ -166,11 +160,26 @@ section {
   background: linear-gradient(45deg, #4156cc, #00965c);
 
   &-content {
-    padding: 120px 0;
+    margin: 0 auto;
+    padding: 120px 30px;
+    max-width: 600px;
 
     p {
-      line-height: 51px;
+      line-height: 45px;
+      text-align: left;
     }
+  }
+}
+
+.resume {
+  margin-top: 15px;
+
+  a {
+    padding: 9px 15px;
+    font-size: 18px;
+    background-color: $black;
+    border-radius: 300px;
+    letter-spacing: 2px;
   }
 }
 
@@ -378,7 +387,7 @@ section {
   }
 }
 
-.slider span {
+.slider img {
   opacity: 0;
   animation: round 9s linear infinite;
 }
@@ -397,15 +406,15 @@ section {
   }
 }
 
-.slider span:nth-child(3) {
+.slider img:nth-child(3) {
   animation-delay: 6s;
 }
 
-.slider span:nth-child(2) {
+.slider img:nth-child(2) {
   animation-delay: 3s;
 }
 
-.slider span:nth-child(1) {
+.slider img:nth-child(1) {
   animation-delay: 0s;
 }
 
@@ -416,16 +425,4 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.resume {
-  margin-top: 15px;
-
-  a {
-    padding: 9px 15px;
-    font-size: 18px;
-    background-color: $black;
-    border-radius: 300px;
-    letter-spacing: 2px;
-  }
 }
