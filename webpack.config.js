@@ -7,12 +7,8 @@ const webpack = require("webpack");
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
-    index: ["./index.scss"],
-    navbar: ["./index.js"],
-    modal: ["./modal.js"],
-    scroll: ["./scroll.js"],
-    smooth_scroll: ["./smooth_scroll.js"],
-    TwitchApi: ["./Twitch/TwitchApi.js"],
+    style: ["./index.scss"],
+    script: ["./index.js"],
   },
   output: {
     filename: "[name].bundle.js",

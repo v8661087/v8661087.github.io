@@ -33,10 +33,8 @@ const FILES_TO_CACHE = [
   "images/photo.jpg",
   "images/github.png",
   "src/normalize.css",
-  "dist/index.bundle.css",
-  "dist/modal.bundle.js",
-  "dist/scroll.bundle.js",
-  "dist/smooth_scroll.bundle.js",
+  "dist/style.bundle.css",
+  "dist/script.bundle.js",
   "manifest.json",
 ];
 self.addEventListener("install", (evt) => {
