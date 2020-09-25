@@ -7,11 +7,41 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="./src/Taipei/Taipei.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./src/taipei/taipei.css" />
+    <link
+      rel="icon"
+      href="https://www.flaticon.com/svg/static/icons/svg/3538/3538157.svg"
+      type="image/x-icon"
+    />
     <title>台北夜市查詢</title>
+    <meta
+      name="description"
+      content="台北夜市查詢，透過臺北資料大平臺搜尋所有臺北的夜市資訊，能夠了解地理位置、攤販名稱、販售商品等。"
+    />
     <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
-    <script src="./src/Taipei/Night.js" async></script>
-    <script src="./src/Taipei/GoogleMaps.js"></script>
+    <script src="./src/taipei/googleMaps.js" async></script>
+    <script src="./src/taipei/night.js" defer></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap"
       async
@@ -19,42 +49,61 @@
     ></script>
   </head>
   <body>
-    <header id="header">
-      <h1>台北夜市</h1>
-      <a id="choice">請選擇夜市名稱:</a>
-      <select id="mySelect">
-        <option value="請選擇">請選擇</option>
-        <option value="大龍街夜市">大龍街夜市</option>
-        <option value="廣州街觀光夜市">廣州街觀光夜市</option>
-        <option value="華西街觀光夜市">華西街觀光夜市</option>
-        <option value="景美夜市">景美夜市</option>
-        <option value="臨江街觀光夜市">臨江街觀光夜市</option>
-        <option value="遼寧街夜市">遼寧街夜市</option>
-        <option value="南機場夜市">南機場夜市</option>
-        <option value="寧夏觀光夜市">寧夏觀光夜市</option>
-        <option value="饒河街觀光夜市">饒河街觀光夜市</option>
-        <option value="雙城街夜市">雙城街夜市</option>
-        <option value="士林觀光夜市">士林觀光夜市</option>
-        <option value="梧州街觀光夜市">梧州街觀光夜市</option>
-        <option value="西昌街觀光夜市">西昌街觀光夜市</option>
-        <option value="延三觀光夜市">延三觀光夜市</option>
-        <option value="梧州街觀光夜市">梧州街觀光夜市</option>
-      </select>
-    </header>
-    <div class="article">
-      <div id="map"></div>
-      <div class="list">
-        <div id="NightMarket"></div>
-        <div class="listTitle">
-          <div class="name">攤位名稱</div>
-          <div class="food">特色美食</div>
-        </div>
-        <div id="listContent"></div>
+    <div class="background"></div>
+    <header
+      id="header"
+      class="min-vh-100 text-center d-flex justify-content-center align-items-center"
+    >
+      <div class="">
+        <h1 class="display-5 m-0">台北夜市查詢</h1>
+        <select id="mySelect" class="m-1 p-2" disabled>
+          <option value="請選擇">--請選擇--</option>
+          <option value="大龍街夜市">大龍街夜市</option>
+          <option value="廣州街觀光夜市">廣州街觀光夜市</option>
+          <option value="華西街觀光夜市">華西街觀光夜市</option>
+          <option value="景美夜市">景美夜市</option>
+          <option value="臨江街觀光夜市">臨江街觀光夜市</option>
+          <option value="遼寧街夜市">遼寧街夜市</option>
+          <option value="南機場夜市">南機場夜市</option>
+          <option value="寧夏觀光夜市">寧夏觀光夜市</option>
+          <option value="饒河街觀光夜市">饒河街觀光夜市</option>
+          <option value="雙城街夜市">雙城街夜市</option>
+          <option value="士林觀光夜市">士林觀光夜市</option>
+          <option value="梧州街觀光夜市">梧州街觀光夜市</option>
+          <option value="西昌街觀光夜市">西昌街觀光夜市</option>
+          <option value="延三觀光夜市">延三觀光夜市</option>
+          <option value="梧州街觀光夜市">梧州街觀光夜市</option>
+        </select>
+        <div id="map" class="map m-auto"></div>
       </div>
-    </div>
-    <div class="loading"></div>
+    </header>
 
-    <a href="#header" id="myBtn" title="Go to top">↑</a>
+    <main class="info justify-content-center flex-wrap m-auto px-1">
+      <div id="market" class="w-100"></div>
+      <div class="info-title w-100 d-flex border-bottom">
+        <div class="name font-weight-bold">攤位名稱</div>
+        <div class="food font-weight-bold">特色美食</div>
+      </div>
+      <div id="list" class="w-100"></div>
+    </main>
+    <footer class="text-center w-100 bg-dark">
+      資料來源:
+      <a
+        class="text-primary text-decoration-none"
+        href="https://data.taipei/#/"
+        target="_blank"
+        >臺北市資料大平臺</a
+      >
+    </footer>
+    <div class="loading"></div>
+    <a
+      href="#header"
+      id="myBtn"
+      class="btn position-fixed justify-content-center align-items-center"
+      title="Go to top"
+      >↑</a
+    >
+
     <script>
       // When the user scrolls down 100px from the top of the document, show the button
       window.onscroll = function () {
@@ -62,10 +111,10 @@
       };
       function scrollFunction() {
         if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
         ) {
-          $("#myBtn").css("display", "block");
+          $("#myBtn").css("display", "flex");
         } else {
           $("#myBtn").css("display", "none");
         }
