@@ -4,6 +4,10 @@ $(function () {
     this.classList.toggle("change");
     $(".menu-link").toggleClass("change");
   });
+  $(".menu-link").click(function () {
+    this.classList.remove("change");
+    $(".hamburger").removeClass("change");
+  });
   //modal事件
   function modalEvent() {
     // When the user clicks the button, open the modal

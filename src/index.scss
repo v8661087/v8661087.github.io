@@ -1,7 +1,22 @@
-@import 'normalize';
+@import "normalize";
 $black: #17181c;
 $gray: #a0a0a0;
 $white: #fff;
+$sm: 375px;
+$md: 700px;
+$lg: 924px;
+$xl: 1200px;
+
+@mixin md() {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+@mixin xl() {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
 
 html,
 body,
@@ -53,6 +68,9 @@ p {
 
 h2 {
   font-size: 30px;
+  @include xl {
+    font-size: 40px;
+  }
 }
 
 h3 {
@@ -162,12 +180,17 @@ section {
 
   &-content {
     margin: 0 auto;
-    padding: 120px 30px;
+    padding: 81px 30px 0;
     max-width: 600px;
-
+    @include xl {
+      padding: 120px 30px;
+    }
     p {
       line-height: 45px;
       text-align: left;
+      @include xl {
+        font-size: 27px;
+      }
     }
   }
 }
@@ -266,7 +289,9 @@ section {
 .contact {
   &-content {
     padding-top: 81px;
-
+    @include xl {
+      padding: 120px 30px;
+    }
     p {
       margin: 3px 0 9px;
     }
@@ -318,7 +343,7 @@ section {
     span {
       display: block;
       font-size: 21px;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "Times New Roman", Times, serif;
       text-align: left;
     }
 
@@ -356,7 +381,7 @@ section {
   }
 }
 
-@media (max-width: 618px) {
+@include md {
   .menu {
     flex-wrap: wrap;
   }
@@ -420,8 +445,7 @@ section {
 }
 
 .parallax {
-  min-height: 100vh;
-  background-image: url('../images/typewriter.jpg');
+  background-image: url("../images/typewriter.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
