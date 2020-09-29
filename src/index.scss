@@ -341,6 +341,10 @@ section {
     background-color: $black;
     border: 0;
     outline: none;
+    @include md {
+      top: 0;
+      right: 3px;
+    }
     &:hover {
       color: rgb(255, 0, 0);
       cursor: pointer;
