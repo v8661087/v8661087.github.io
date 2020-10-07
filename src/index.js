@@ -48,66 +48,38 @@ $(function () {
   // scroll到目前視窗畫面加入/移除動畫
   $(document).scroll(function () {
     let scroll = $(this).scrollTop();
-    const element = document.querySelector(".about-content");
-    const element2 = document.querySelector(".skills-content");
-    const element3 = document.querySelector(".works-content");
-    const element4 = document.querySelector(".contact-content");
-    let windowHeightPaddingTop = $(window).height() - 81;
-    if (scroll > 120) {
-      element.classList.add("animated", "slideInUp");
+    if (scroll > 0) {
+      $(".about-content").addClass("animated slideInUp");
     }
-    if (scroll <= 120) {
-      element.classList.remove("animated", "slideInUp");
+    if (scroll <= 0) {
+      $(".about-content").removeClass("animated slideInUp");
     }
+
+    if (scroll > $(".about").height()) {
+      $(".skills-content").addClass("animated slideInUp");
+    }
+    if (scroll <= $(".about").height()) {
+      $(".skills-content").removeClass("animated slideInUp");
+    }
+
+    if (scroll > $(".about").height() + $(".skills").height()) {
+      $(".works-content").addClass("animated zoomIn");
+    }
+    if (scroll <= $(".about").height() + $(".skills").height()) {
+      $(".works-content").removeClass("animated zoomIn");
+    }
+
     if (
       scroll >
-      $(".main").height() + $(".about").height() - windowHeightPaddingTop
+      $(".about").height() + $(".skills").height() + $(".works").height()
     ) {
-      element2.classList.add("animated", "slideInUp");
+      $(".contact-content").addClass("animated fadeInLeft");
     }
     if (
       scroll <=
-      $(".main").height() + $(".about").height() - windowHeightPaddingTop
+      $(".about").height() + $(".skills").height() + $(".works").height()
     ) {
-      element2.classList.remove("animated", "slideInUp");
-    }
-    if (
-      scroll >
-      $(".main").height() +
-        $(".about").height() +
-        $(".skills").height() -
-        windowHeightPaddingTop
-    ) {
-      element3.classList.add("animated", "zoomIn");
-    }
-    if (
-      scroll <=
-      $(".main").height() +
-        $(".about").height() +
-        $(".skills").height() -
-        windowHeightPaddingTop
-    ) {
-      element3.classList.remove("animated", "zoomIn");
-    }
-    if (
-      scroll >
-      $(".main").height() +
-        $(".about").height() +
-        $(".skills").height() +
-        $(".works").height() -
-        windowHeightPaddingTop
-    ) {
-      element4.classList.add("animated", "fadeInLeft");
-    }
-    if (
-      scroll <
-      $(".main").height() +
-        $(".about").height() +
-        $(".skills").height() +
-        $(".works").height() -
-        windowHeightPaddingTop
-    ) {
-      element4.classList.remove("animated", "fadeInLeft");
+      $(".contact-content").removeClass("animated fadeInLeft");
     }
   });
 
